@@ -1,0 +1,77 @@
+import { json } from '@sveltejs/kit';
+import fs from 'fs/promises';
+import path from 'path';
+
+export async function POST({ request, params }) {
+  const subject = params.subject;
+  const submission = await request.json(); // { questionIds: string[], answers: number[] }
+
+  if (!submission || !submission.questionIds || !submission.answers) {
+    return json({ error: 'Invalid submission data' }, { status: 400 });
+  }
+
+  const validSubjects = ['dsa', 'pc', 'toe'];
+  if (!validSubjects.includes(subject)) {
+    return json({ error: 'Invalid subject' }, { status: 400 });
+  }
+
+  const filePath = path.join(process.cwd(), 'questions', `${subject}.json`);
+
+  try {
+    const fileContent = await fs.readFile(filePath, 'utf-8');
+    const allQuestionsFull = JSON.parse(fileContent); // All questions with answers and explanations
+
+    let correctCount = 0;
+    const reviewData = [];
+
+    for (let i = 0; i < submission.questionIds.length; i++) {
+      const questionId = submission.questionIds[i];
+      const userAnswerIndex = submission.answers[i]; // User's selected option index
+
+      const questionData = allQuestionsFull.find(q => q.id === questionId);
+
+      if (questionData) {
+        const isCorrect = (userAnswerIndex === questionData.correctAnswerIndex);
+        if (isCorrect) {
+          correctCount++;
+        }
+        reviewData.push({
+          id: questionData.id,
+          questionText: questionData.questionText,
+          options: questionData.options,
+          userAnswerIndex: userAnswerIndex,
+          correctAnswerIndex: questionData.correctAnswerIndex,
+          explanation: questionData.explanation,
+          isCorrect: isCorrect
+        });
+      } else {
+        // Handle case where a submitted question ID is not found (shouldn't happen ideally)
+        reviewData.push({
+          id: questionId,
+          questionText: 'Question data not found.',
+          options: [],
+          userAnswerIndex: userAnswerIndex,
+          correctAnswerIndex: null,
+          explanation: 'N/A',
+          isCorrect: false
+        });
+      }
+    }
+
+    const grade = (submission.questionIds.length > 0) ? (correctCount / submission.questionIds.length) * 100 : 0;
+
+    return json({
+      grade: grade,
+      reviewData: reviewData, // Array of objects for each question's review
+      totalQuestions: submission.questionIds.length,
+      correctCount: correctCount
+    });
+
+  } catch (error) {
+    console.error('Error processing quiz submission:', error);
+    if (error.code === 'ENOENT') {
+        return json({ error: `Question file for subject '${subject}' not found.` }, { status: 404 });
+    }
+    return json({ error: 'Failed to process quiz submission.' }, { status: 500 });
+  }
+}

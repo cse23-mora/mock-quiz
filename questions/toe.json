@@ -1,0 +1,38 @@
+[
+  {
+    "id": "toe001",
+    "questionText": "Ohm's Law states that \\(V = IR\\). If voltage (V) is 12V and resistance (R) is 3 Ohms, what is the current (I)?",
+    "options": [
+      "36 Amperes",
+      "0.25 Amperes",
+      "4 Amperes",
+      "15 Amperes"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Using Ohm's Law, I = V/R = 12V / 3 Ohms = 4 Amperes."
+  },
+  {
+    "id": "toe002",
+    "questionText": "What is the unit of capacitance?",
+    "options": [
+      "Henry (H)",
+      "Ohm (Ω)",
+      "Farad (F)",
+      "Siemens (S)"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "The Farad (F) is the SI unit of electrical capacitance, the ability of a body to store an electrical charge."
+  },
+  {
+    "id": "toe003",
+    "questionText": "Two resistors, R1 = 10Ω and R2 = 20Ω, are connected in series. What is their total resistance?",
+    "options": [
+      "\\( \\approx 6.67\\Omega \\)",
+      "\\( 10\\Omega \\)",
+      "\\( 20\\Omega \\)",
+      "\\( 30\\Omega \\)"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "For resistors in series, the total resistance is the sum of individual resistances: R_total = R1 + R2 = 10Ω + 20Ω = 30Ω."
+  }
+]
