@@ -2,7 +2,8 @@
 	const subjects = [
 		{ name: 'Data Structures and Algorithms', slug: 'dsa' },
 		{ name: 'Program Construction', slug: 'pc' },
-		{ name: 'Theory of Electricity', slug: 'toe' }
+		{ name: 'Theory of Electricity', slug: 'toe' },
+		{ name: 'Computer Organization', slug: 'codd' }
 	];
 </script>
 

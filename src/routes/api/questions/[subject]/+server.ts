@@ -2,6 +2,7 @@ import { json } from '@sveltejs/kit';
 import {pc } from '../../../../data/pc';
 import { dsa } from '../../../../data/dsa';
 import { toe } from '../../../../data/toe';
+import { codd } from '../../../../data/codd';
 
 // Helper function to shuffle an array
 function shuffleArray(array) {
@@ -27,6 +28,9 @@ export async function GET({ params, url }) {
         break;
       case 'pc':
         allQuestions = pc;
+        break;
+      case 'codd':
+        allQuestions = codd;
         break;
       default:
         return json({ error: 'Invalid subject' }, { status: 400 });

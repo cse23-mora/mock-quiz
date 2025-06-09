@@ -2,6 +2,7 @@ import { json } from '@sveltejs/kit';
 import {pc } from '../../../../data/pc';
 import { dsa } from '../../../../data/dsa';
 import { toe } from '../../../../data/toe';
+import { codd } from '../../../../data/codd';
 
 export async function POST({ request, params }) {
   const subject = params.subject;
@@ -21,6 +22,9 @@ export async function POST({ request, params }) {
         break;
       case 'pc':
         allQuestions = pc;
+        break;
+      case 'codd':
+        allQuestions = codd;
         break;
       default:
         return json({ error: 'Invalid subject' }, { status: 400 });
