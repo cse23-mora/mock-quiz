@@ -1,62 +1,1202 @@
 [
   {
     "id": "dsa001",
-    "questionText": "What is the time complexity of inserting an element at the end of a dynamic array (ArrayList in Java, list in Python)?",
+    "questionText": "What is the worst-case time complexity of Insertion Sort?",
     "options": [
-      "O(1) amortized",
       "O(n)",
-      "O(log n)",
-      "O(n log n)"
+      "O(n log n)",
+      "O(n²)",
+      "O(log n)"
     ],
-    "correctAnswerIndex": 0,
-    "explanation": "While resizing can take O(n), it happens infrequently enough that the amortized cost is O(1)."
+    "correctAnswerIndex": 2,
+    "explanation": "Insertion sort has O(n²) worst-case complexity when the array is reverse sorted, requiring maximum comparisons and shifts for each element."
   },
   {
     "id": "dsa002",
-    "questionText": "Which of the following is NOT a stable sorting algorithm?",
+    "questionText": "Which notation represents an asymptotically tight bound?",
     "options": [
-      "Merge Sort",
-      "Bubble Sort",
-      "Quick Sort",
-      "Insertion Sort"
+      "O-notation (Big O)",
+      "Ω-notation (Big Omega)",
+      "Θ-notation (Big Theta)",
+      "o-notation (Little o)"
     ],
     "correctAnswerIndex": 2,
-    "explanation": "Quick Sort is not stable because the partitioning process can change the relative order of equal elements."
+    "explanation": "Θ-notation provides both upper and lower bounds, making it asymptotically tight. It means the function grows at exactly the same rate as the bound."
   },
   {
     "id": "dsa003",
-    "questionText": "What data structure is typically used to implement a priority queue?",
+    "questionText": "In the Divide and Conquer approach, what is the correct order of steps?",
     "options": [
-      "Stack",
-      "Queue",
-      "Heap",
-      "Linked List"
+      "Combine, Divide, Conquer",
+      "Divide, Conquer, Combine",
+      "Conquer, Divide, Combine",
+      "Divide, Combine, Conquer"
     ],
-    "correctAnswerIndex": 2,
-    "explanation": "Heaps (especially binary heaps) are well-suited for priority queue operations due to their efficient insertion and extraction of the minimum/maximum element."
+    "correctAnswerIndex": 1,
+    "explanation": "The correct order is: Divide the problem into smaller subproblems, Conquer (solve) the subproblems recursively, and Combine the solutions."
   },
   {
     "id": "dsa004",
-    "questionText": "A graph where edge weights are always positive can be solved for shortest path using which algorithm?",
+    "questionText": "What is the time complexity of the MERGE operation in Merge Sort?",
     "options": [
-      "Bellman-Ford",
-      "Dijkstra's Algorithm",
-      "Floyd-Warshall",
-      "Kruskal's Algorithm"
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n log n)"
     ],
-    "correctAnswerIndex": 1,
-    "explanation": "Dijkstra's algorithm is designed for graphs with non-negative edge weights. Bellman-Ford can handle negative weights (but not negative cycles)."
+    "correctAnswerIndex": 2,
+    "explanation": "The merge operation takes O(n) time as it needs to examine each element in both subarrays exactly once to merge them in sorted order."
   },
   {
     "id": "dsa005",
-    "questionText": "What is \\( \\sum_{i=1}^{n} i \\) ?",
+    "questionText": "Which of the following is NOT a property of an Abstract Data Type (ADT)?",
     "options": [
-      "\\( n(n+1)/2 \\)",
-      "\\( n^2 \\)",
-      "\\( n(n-1)/2 \\)",
-      "\\( (n+1)^2 \\)"
+      "Implementation independence",
+      "Data abstraction",
+      "Specific memory allocation scheme",
+      "Encapsulation of operations"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "ADTs are implementation-independent specifications. They define operations and behavior, not specific memory allocation or implementation details."
+  },
+  {
+    "id": "dsa006",
+    "questionText": "In a singly linked list, what is the time complexity to insert an element at the beginning?",
+    "options": [
+      "O(1)",
+      "O(n)",
+      "O(log n)",
+      "O(n²)"
     ],
     "correctAnswerIndex": 0,
-    "explanation": "This is the formula for the sum of the first n natural numbers, often proven by induction or Gauss's method."
+    "explanation": "Inserting at the beginning of a singly linked list is O(1) because you only need to update the head pointer and the new node's next pointer."
+  },
+  {
+    "id": "dsa007",
+    "questionText": "Which data structure follows the LIFO (Last In, First Out) principle?",
+    "options": [
+      "Queue",
+      "Stack",
+      "Linked List",
+      "Array"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "A stack follows LIFO principle where the last element added (pushed) is the first one to be removed (popped)."
+  },
+  {
+    "id": "dsa008",
+    "questionText": "In a Binary Search Tree, what is true about the in-order traversal?",
+    "options": [
+      "It visits nodes in random order",
+      "It produces elements in sorted order",
+      "It visits the root first",
+      "It produces elements in reverse sorted order"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "In-order traversal of a BST (Left, Root, Right) produces elements in sorted order due to the BST property where left < root < right."
+  },
+  {
+    "id": "dsa009",
+    "questionText": "What is the maximum number of children a node can have in a binary tree?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "Unlimited"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "By definition, a binary tree node can have at most 2 children: a left child and a right child."
+  },
+  {
+    "id": "dsa010",
+    "questionText": "Which property must a max-heap satisfy?",
+    "options": [
+      "Parent ≤ Children",
+      "Parent ≥ Children",
+      "Left child ≤ Right child",
+      "All leaves are at the same level"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "In a max-heap, every parent node must have a value greater than or equal to its children, ensuring the maximum element is at the root."
+  },
+  {
+    "id": "dsa011",
+    "questionText": "What is the time complexity of BUILD-MAX-HEAP operation?",
+    "options": [
+      "O(n log n)",
+      "O(n²)",
+      "O(n)",
+      "O(log n)"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "BUILD-MAX-HEAP runs in O(n) time, not O(n log n), because most nodes are near the leaves and require less heapify work."
+  },
+  {
+    "id": "dsa012",
+    "questionText": "In hash tables with chaining, what happens when a collision occurs?",
+    "options": [
+      "The new element overwrites the existing one",
+      "The new element is stored in the next available slot",
+      "The new element is added to a linked list at that position",
+      "The hash table is resized"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "With chaining, collisions are handled by maintaining a linked list at each hash table position, storing all elements that hash to the same location."
+  },
+  {
+    "id": "dsa013",
+    "questionText": "What is the load factor (α) in a hash table?",
+    "options": [
+      "Number of collisions / Table size",
+      "Number of elements / Table size",
+      "Table size / Number of elements",
+      "Number of empty slots / Table size"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Load factor α = n/m, where n is the number of elements stored and m is the table size. It measures how full the hash table is."
+  },
+  {
+    "id": "dsa014",
+    "questionText": "In graph terminology, what is the degree of a vertex in an undirected graph?",
+    "options": [
+      "Number of incoming edges",
+      "Number of outgoing edges",
+      "Number of incident edges",
+      "Number of adjacent vertices + 1"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "In an undirected graph, the degree of a vertex is the number of edges incident to (connected to) that vertex."
+  },
+  {
+    "id": "dsa015",
+    "questionText": "Which graph traversal algorithm uses a queue data structure?",
+    "options": [
+      "Depth-First Search (DFS)",
+      "Breadth-First Search (BFS)",
+      "Both DFS and BFS",
+      "Neither DFS nor BFS"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "BFS uses a queue to maintain the frontier of discovered vertices, processing vertices in the order they were discovered."
+  },
+  {
+    "id": "dsa016",
+    "questionText": "What is the time complexity of BFS on a graph represented using adjacency lists?",
+    "options": [
+      "O(V)",
+      "O(E)",
+      "O(V + E)",
+      "O(V × E)"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "BFS visits each vertex once (O(V)) and examines each edge once (O(E)), giving total complexity O(V + E)."
+  },
+  {
+    "id": "dsa017",
+    "questionText": "In DFS, what do the discovery and finishing times represent?",
+    "options": [
+      "Time when vertex is first visited and time when all neighbors are processed",
+      "Time when vertex is added to stack and removed from stack",
+      "Time when vertex becomes gray and time when it becomes black",
+      "Both A and C are correct"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "Discovery time is when a vertex is first encountered (turns gray), and finishing time is when all its descendants are processed (turns black)."
+  },
+  {
+    "id": "dsa018",
+    "questionText": "What type of graph is required for Dijkstra's algorithm to work correctly?",
+    "options": [
+      "Directed graph with negative weights",
+      "Undirected graph only",
+      "Graph with non-negative edge weights",
+      "Complete graph"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Dijkstra's algorithm requires non-negative edge weights. It uses a greedy approach that fails with negative weights."
+  },
+  {
+    "id": "dsa019",
+    "questionText": "Which algorithm can detect negative-weight cycles in a graph?",
+    "options": [
+      "Dijkstra's Algorithm",
+      "Bellman-Ford Algorithm",
+      "Floyd-Warshall Algorithm",
+      "Both B and C"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "Both Bellman-Ford and Floyd-Warshall can detect negative-weight cycles. Dijkstra's cannot handle negative weights at all."
+  },
+  {
+    "id": "dsa020",
+    "questionText": "In Kruskal's algorithm for MST, what data structure is typically used to detect cycles?",
+    "options": [
+      "Stack",
+      "Queue",
+      "Union-Find (Disjoint Set)",
+      "Priority Queue"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Kruskal's algorithm uses Union-Find data structure to efficiently detect cycles by checking if two vertices are in the same connected component."
+  },
+  {
+    "id": "dsa021",
+    "questionText": "What is the main difference between Kruskal's and Prim's algorithms?",
+    "options": [
+      "Kruskal works on edges, Prim works on vertices",
+      "Kruskal is faster than Prim",
+      "Kruskal produces different MST than Prim",
+      "Kruskal works only on directed graphs"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Kruskal's algorithm grows the MST by adding edges in order of weight, while Prim's grows by adding vertices to expand a single tree."
+  },
+  {
+    "id": "dsa022",
+    "questionText": "Which sorting algorithm has the best worst-case time complexity?",
+    "options": [
+      "Quick Sort",
+      "Bubble Sort",
+      "Merge Sort",
+      "Insertion Sort"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Merge Sort has O(n log n) worst-case complexity, while Quick Sort can degrade to O(n²) in worst case."
+  },
+  {
+    "id": "dsa023",
+    "questionText": "What is the space complexity of Merge Sort?",
+    "options": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n log n)"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Merge Sort requires O(n) extra space for the temporary arrays used during the merge operation."
+  },
+  {
+    "id": "dsa024",
+    "questionText": "In the Master Method, for T(n) = 4T(n/2) + n, which case applies?",
+    "options": [
+      "Case 1",
+      "Case 2", 
+      "Case 3",
+      "Master Method doesn't apply"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "With a=4, b=2, f(n)=n, we have n^(log₂4) = n². Since f(n) = O(n^(2-ε)) for ε=1, Case 1 applies, giving T(n) = Θ(n²)."
+  },
+  {
+    "id": "dsa025",
+    "questionText": "What is the recurrence relation for Merge Sort?",
+    "options": [
+      "T(n) = T(n-1) + O(1)",
+      "T(n) = 2T(n/2) + O(n)",
+      "T(n) = T(n/2) + O(1)",
+      "T(n) = 2T(n-1) + O(n)"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Merge Sort divides into 2 subproblems of size n/2 each, then merges in O(n) time, giving T(n) = 2T(n/2) + O(n)."
+  },
+  {
+    "id": "dsa026",
+    "questionText": "Which of the following is true about Dynamic Programming?",
+    "options": [
+      "It works only on optimization problems",
+      "It requires optimal substructure and overlapping subproblems",
+      "It always uses less space than recursion",
+      "It cannot be implemented recursively"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Dynamic Programming requires both optimal substructure (optimal solutions contain optimal subsolutions) and overlapping subproblems (same subproblems are solved multiple times)."
+  },
+  {
+    "id": "dsa027",
+    "questionText": "In the 0-1 Knapsack problem using DP, what does P(i,k) represent?",
+    "options": [
+      "Profit using first i items with capacity k",
+      "Maximum profit using items i through n with capacity k",
+      "Weight of first i items",
+      "Number of ways to achieve profit k"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "P(i,k) represents the maximum possible profit using items i, i+1, ..., n with remaining capacity k."
+  },
+  {
+    "id": "dsa028",
+    "questionText": "What is the key difference between 0-1 Knapsack and Fractional Knapsack?",
+    "options": [
+      "0-1 uses DP, Fractional uses Greedy",
+      "0-1 allows partial items, Fractional doesn't",
+      "0-1 doesn't allow partial items, Fractional does",
+      "There is no difference"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "In 0-1 Knapsack, items must be taken completely or not at all. In Fractional Knapsack, items can be taken partially."
+  },
+  {
+    "id": "dsa029",
+    "questionText": "Which approach is used by Dijkstra's algorithm?",
+    "options": [
+      "Dynamic Programming",
+      "Divide and Conquer",
+      "Greedy",
+      "Backtracking"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Dijkstra's algorithm uses a greedy approach by always selecting the unvisited vertex with minimum distance from the source."
+  },
+  {
+    "id": "dsa030",
+    "questionText": "What is the time complexity of searching in a balanced Binary Search Tree?",
+    "options": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n log n)"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "In a balanced BST, the height is O(log n), so search, insert, and delete operations take O(log n) time."
+  },
+  {
+    "id": "dsa031",
+    "questionText": "What happens to BST operations when the tree becomes a linear chain?",
+    "options": [
+      "Operations become O(1)",
+      "Operations become O(log n)",
+      "Operations become O(n)",
+      "Operations become impossible"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "When a BST degenerates into a linear chain (unbalanced), all operations degrade to O(n) as you may need to traverse the entire chain."
+  },
+  {
+    "id": "dsa032",
+    "questionText": "In heap sort, after building the max-heap, what is done repeatedly?",
+    "options": [
+      "Extract the minimum element",
+      "Swap root with last element and heapify",
+      "Insert new elements",
+      "Rebuild the entire heap"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Heap sort repeatedly swaps the root (maximum) with the last element, decreases heap size, and calls heapify to maintain heap property."
+  },
+  {
+    "id": "dsa033",
+    "questionText": "What is the parent index of node at index i in a heap array (1-indexed)?",
+    "options": [
+      "i/2",
+      "(i-1)/2",
+      "2i",
+      "i+1"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "In a 1-indexed heap array, the parent of node at index i is at index ⌊i/2⌋."
+  },
+  {
+    "id": "dsa034",
+    "questionText": "Which hash function method is generally preferred when the table size is not critical?",
+    "options": [
+      "Division method",
+      "Multiplication method",
+      "Universal hashing",
+      "Perfect hashing"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "The multiplication method is preferred when table size is not critical because it works well with any table size, unlike division method which requires careful choice of table size."
+  },
+  {
+    "id": "dsa035",
+    "questionText": "In open addressing, what is primary clustering?",
+    "options": [
+      "Multiple hash functions clustering together",
+      "Long runs of occupied slots that tend to get longer",
+      "Keys clustering around prime numbers",
+      "Hash values clustering around zero"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Primary clustering occurs in linear probing when occupied slots form long contiguous blocks, increasing search time."
+  },
+  {
+    "id": "dsa036",
+    "questionText": "Which collision resolution technique avoids both primary and secondary clustering?",
+    "options": [
+      "Linear probing",
+      "Quadratic probing",
+      "Double hashing",
+      "Chaining"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Double hashing uses a second hash function to determine probe sequence, avoiding both primary and secondary clustering."
+  },
+  {
+    "id": "dsa037",
+    "questionText": "In graph representation, when is adjacency matrix preferred over adjacency list?",
+    "options": [
+      "When the graph is sparse",
+      "When the graph is dense",
+      "When memory is limited",
+      "Never, adjacency list is always better"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Adjacency matrix is preferred for dense graphs because it provides O(1) edge lookup time and doesn't waste much space when most edges exist."
+  },
+  {
+    "id": "dsa038",
+    "questionText": "What is the space complexity of adjacency list representation?",
+    "options": [
+      "O(V)",
+      "O(E)",
+      "O(V + E)",
+      "O(V²)"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Adjacency list uses O(V) space for vertex pointers and O(E) space for edge storage, totaling O(V + E)."
+  },
+  {
+    "id": "dsa039",
+    "questionText": "In DFS of an undirected graph, which types of edges can exist?",
+    "options": [
+      "Tree and back edges only",
+      "Tree and forward edges only",
+      "Tree, back, and cross edges",
+      "All four types of edges"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "In undirected graphs, DFS produces only tree edges and back edges. Forward and cross edges don't exist due to the undirected nature."
+  },
+  {
+    "id": "dsa040",
+    "questionText": "What property indicates that a directed graph is acyclic (DAG)?",
+    "options": [
+      "DFS produces no back edges",
+      "DFS produces no forward edges",
+      "DFS produces no cross edges",
+      "BFS produces no cross edges"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "A directed graph is acyclic if and only if DFS produces no back edges, since back edges indicate cycles."
+  },
+  {
+    "id": "dsa041",
+    "questionText": "In Prim's algorithm, how is the next vertex selected?",
+    "options": [
+      "Vertex with minimum weight",
+      "Vertex with maximum degree",
+      "Lightest edge connecting tree to non-tree vertex",
+      "Alphabetically first vertex"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Prim's algorithm grows the MST by always adding the lightest edge that connects a vertex in the tree to a vertex outside the tree."
+  },
+  {
+    "id": "dsa042",
+    "questionText": "What is the cut property used in MST algorithms?",
+    "options": [
+      "Any edge crossing a cut is safe",
+      "The heaviest edge crossing a cut is safe",
+      "The lightest edge crossing a cut is safe (if cut respects MST-so-far)",
+      "No edge crossing a cut can be in MST"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "The cut property states that for any cut that respects a set A (subset of some MST), the light edge crossing the cut is safe for A."
+  },
+  {
+    "id": "dsa043",
+    "questionText": "What is the key insight behind Bellman-Ford algorithm?",
+    "options": [
+      "Use greedy approach like Dijkstra",
+      "Relax all edges repeatedly",
+      "Use only positive weights",
+      "Process vertices in order"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Bellman-Ford repeatedly relaxes all edges |V|-1 times, allowing it to find shortest paths even with negative weights."
+  },
+  {
+    "id": "dsa044",
+    "questionText": "How many times does Bellman-Ford algorithm relax all edges?",
+    "options": [
+      "|V| times",
+      "|V| - 1 times",
+      "|E| times",
+      "|E| - 1 times"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Bellman-Ford relaxes all edges |V|-1 times because the longest simple path can have at most |V|-1 edges."
+  },
+  {
+    "id": "dsa045",
+    "questionText": "What does it mean if f(n) = O(g(n))?",
+    "options": [
+      "f(n) grows exactly like g(n)",
+      "f(n) grows at most as fast as g(n)",
+      "f(n) grows at least as fast as g(n)",
+      "f(n) grows faster than g(n)"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "O-notation provides an upper bound. f(n) = O(g(n)) means f(n) grows at most as fast as g(n) for large n."
+  },
+  {
+    "id": "dsa046",
+    "questionText": "If f(n) = 3n² + 2n + 1, what is the tightest bound?",
+    "options": [
+      "O(n)",
+      "O(n²)",
+      "Θ(n²)",
+      "Ω(n³)"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "The function is dominated by 3n² term, so it grows exactly like n², making Θ(n²) the tightest bound."
+  },
+  {
+    "id": "dsa047",
+    "questionText": "What is the best-case time complexity of Bubble Sort?",
+    "options": [
+      "O(n)",
+      "O(n log n)",
+      "O(n²)",
+      "O(1)"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "In the best case (already sorted array), optimized bubble sort can detect this in one pass and terminate in O(n) time."
+  },
+  {
+    "id": "dsa048",
+    "questionText": "Which sorting algorithm is adaptive?",
+    "options": [
+      "Merge Sort",
+      "Heap Sort",
+      "Insertion Sort",
+      "Selection Sort"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Insertion Sort is adaptive - it performs better on partially sorted arrays, with best-case O(n) complexity."
+  },
+  {
+    "id": "dsa049",
+    "questionText": "What is the maximum number of edges in a simple undirected graph with n vertices?",
+    "options": [
+      "n",
+      "n - 1",
+      "n(n-1)/2",
+      "n²"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "A complete graph with n vertices has n(n-1)/2 edges, which is the maximum for a simple undirected graph."
+  },
+  {
+    "id": "dsa050",
+    "questionText": "In a tree with n vertices, how many edges are there?",
+    "options": [
+      "n",
+      "n - 1",
+      "n + 1",
+      "2n"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "A tree with n vertices always has exactly n-1 edges. This is a fundamental property of trees."
+  },
+  {
+    "id": "dsa051",
+    "questionText": "What is the height of a complete binary tree with n nodes?",
+    "options": [
+      "⌊log₂ n⌋",
+      "⌈log₂ n⌉",
+      "⌊log₂ (n+1)⌋",
+      "⌈log₂ (n+1)⌉"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "The height of a complete binary tree with n nodes is ⌊log₂ n⌋, where height is measured from root (level 0)."
+  },
+  {
+    "id": "dsa052",
+    "questionText": "Which traversal of a binary tree uses a stack implicitly?",
+    "options": [
+      "In-order",
+      "Pre-order",
+      "Post-order",
+      "All of the above"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "All recursive tree traversals (in-order, pre-order, post-order) use the system call stack implicitly for recursion."
+  },
+  {
+    "id": "dsa053",
+    "questionText": "What is the time complexity of finding the kth smallest element in a max-heap?",
+    "options": [
+      "O(1)",
+      "O(log n)",
+      "O(k log n)",
+      "O(n)"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "Finding the kth smallest in a max-heap may require examining most of the heap in worst case, leading to O(n) complexity."
+  },
+  {
+    "id": "dsa054",
+    "questionText": "Which operation is most efficient in a heap?",
+    "options": [
+      "Finding minimum in max-heap",
+      "Finding maximum in max-heap",
+      "Finding arbitrary element",
+      "Deleting arbitrary element"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Finding the maximum in a max-heap is O(1) since the maximum element is always at the root."
+  },
+  {
+    "id": "dsa055",
+    "questionText": "In a hash table with good hash function, what is the expected time for basic operations?",
+    "options": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n log n)"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "With a good hash function and reasonable load factor, hash table operations (insert, delete, search) have O(1) expected time."
+  },
+  {
+    "id": "dsa056",
+    "questionText": "What is a perfect hash function?",
+    "options": [
+      "Hash function with no collisions for any input",
+      "Hash function with no collisions for a specific set of keys",
+      "Hash function that distributes keys uniformly",
+      "Hash function that runs in O(1) time"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "A perfect hash function produces no collisions for a specific, known set of keys. Perfect hashing for arbitrary keys is generally impossible."
+  },
+  {
+    "id": "dsa057",
+    "questionText": "In which scenario would you prefer BFS over DFS?",
+    "options": [
+      "Finding any path between two vertices",
+      "Finding shortest path in unweighted graph",
+      "Using less memory",
+      "Detecting cycles"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "BFS finds the shortest path (minimum number of edges) in unweighted graphs, while DFS may find longer paths."
+  },
+  {
+    "id": "dsa058",
+    "questionText": "What is the space complexity of DFS?",
+    "options": [
+      "O(1)",
+      "O(V)",
+      "O(E)",
+      "O(V + E)"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "DFS uses O(V) space for the recursion stack in worst case (when graph is a long path)."
+  },
+  {
+    "id": "dsa059",
+    "questionText": "Which property is essential for applying Dynamic Programming?",
+    "options": [
+      "Greedy choice property",
+      "Optimal substructure",
+      "Negative weights",
+      "Sorted input"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Optimal substructure is essential for DP - optimal solutions to problems must contain optimal solutions to subproblems."
+  },
+  {
+    "id": "dsa060",
+    "questionText": "What is memoization in Dynamic Programming?",
+    "options": [
+      "Forgetting computed results",
+      "Storing and reusing computed results",
+      "Computing results multiple times",
+      "Using more memory than needed"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Memoization is the technique of storing computed results in a table to avoid recomputing the same subproblems."
+  },
+  {
+    "id": "dsa061",
+    "questionText": "Which approach builds the solution bottom-up?",
+    "options": [
+      "Recursive DP with memoization",
+      "Tabular DP",
+      "Greedy algorithms",
+      "Divide and conquer"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Tabular DP builds the solution bottom-up by solving smaller subproblems first and using them to build larger solutions."
+  },
+  {
+    "id": "dsa062",
+    "questionText": "What is the Fractional Knapsack problem's optimal strategy?",
+    "options": [
+      "Dynamic Programming",
+      "Greedy by value/weight ratio",
+      "Brute force",
+      "Backtracking"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Fractional Knapsack can be solved optimally using greedy approach: sort by value/weight ratio and take items in that order."
+  },
+  {
+    "id": "dsa063",
+    "questionText": "Why doesn't greedy approach work for 0-1 Knapsack?",
+    "options": [
+      "Items cannot be sorted",
+      "Greedy choice doesn't guarantee global optimum",
+      "Problem has no optimal substructure",
+      "Problem is NP-hard"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Greedy choice (like highest value/weight ratio) doesn't guarantee global optimum in 0-1 Knapsack because items must be taken completely."
+  },
+  {
+    "id": "dsa064",
+    "questionText": "What is the time complexity of naive recursive Fibonacci?",
+    "options": [
+      "O(n)",
+      "O(n log n)",
+      "O(2ⁿ)",
+      "O(n²)"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Naive recursive Fibonacci has exponential time complexity O(2ⁿ) due to overlapping subproblems being recomputed."
+  },
+  {
+    "id": "dsa065",
+    "questionText": "What does strong connectivity mean in a directed graph?",
+    "options": [
+      "All vertices have equal in-degree and out-degree",
+      "There's a path from every vertex to every other vertex",
+      "The graph has no cycles",
+      "The graph is planar"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "A directed graph is strongly connected if there's a directed path from every vertex to every other vertex."
+  },
+  {
+    "id": "dsa066",
+    "questionText": "In adjacency matrix representation, how do you check if edge (u,v) exists?",
+    "options": [
+      "matrix[u][v] == 1",
+      "Traverse u's adjacency list",
+      "Use hash table lookup",
+      "Both A and B"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "In adjacency matrix, checking edge existence is O(1) - simply check if matrix[u][v] is 1 (or the edge weight)."
+  },
+  {
+    "id": "dsa067",
+    "questionText": "What is the main advantage of Merge Sort over Quick Sort?",
+    "options": [
+      "Better average case performance",
+      "Guaranteed O(n log n) worst case",
+      "In-place sorting",
+      "Simpler implementation"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Merge Sort guarantees O(n log n) worst-case performance, while Quick Sort can degrade to O(n²) in worst case."
+  },
+  {
+    "id": "dsa068",
+    "questionText": "Which sorting algorithm is most suitable for sorting linked lists?",
+    "options": [
+      "Quick Sort",
+      "Heap Sort",
+      "Merge Sort",
+      "Bubble Sort"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Merge Sort is ideal for linked lists because it doesn't require random access to elements and can efficiently merge sorted sublists."
+  },
+  {
+    "id": "dsa069",
+    "questionText": "What happens during the 'bubble up' process in Bubble Sort?",
+    "options": [
+      "Smallest element moves to beginning",
+      "Largest element moves to end",
+      "Elements are randomly shuffled",
+      "Array is divided into subarrays"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "In Bubble Sort, adjacent elements are compared and swapped if needed, causing the largest element to 'bubble up' to the end."
+  },
+  {
+    "id": "dsa070",
+    "questionText": "What is the key advantage of Insertion Sort?",
+    "options": [
+      "Best worst-case complexity",
+      "Efficient for small or nearly sorted arrays",
+      "Uses no extra memory",
+      "Both B and C"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "Insertion Sort is efficient for small arrays and nearly sorted data (adaptive), and it sorts in-place with no extra memory."
+  },
+  {
+    "id": "dsa071",
+    "questionText": "In the substitution method for solving recurrences, what is the first step?",
+    "options": [
+      "Solve the recurrence directly",
+      "Guess the form of the solution",
+      "Apply mathematical induction",
+      "Draw the recursion tree"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "The substitution method starts by guessing the form of the solution, then uses mathematical induction to verify the guess."
+  },
+  {
+    "id": "dsa072",
+    "questionText": "What is the recursion tree method useful for?",
+    "options": [
+      "Exact solutions only",
+      "Generating guesses for substitution method",
+      "Proving lower bounds",
+      "Analyzing space complexity"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "The recursion tree method helps visualize the recurrence structure and generates good guesses for the substitution method."
+  },
+  {
+    "id": "dsa073",
+    "questionText": "When can we not apply the Master Method?",
+    "options": [
+      "When a < 1",
+      "When f(n) doesn't fit any of the three cases",
+      "When b ≤ 1",
+      "Both A and B"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "Master Method requires a ≥ 1 and b > 1, and f(n) must fit one of the three standard cases for the theorem to apply."
+  },
+  {
+    "id": "dsa074",
+    "questionText": "What type of problems typically use the Greedy approach?",
+    "options": [
+      "Problems with overlapping subproblems",
+      "Problems with greedy choice property",
+      "Problems requiring exhaustive search",
+      "Problems with negative weights"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Greedy algorithms work on problems with greedy choice property - where local optimal choices lead to global optimal solution."
+  },
+  {
+    "id": "dsa075",
+    "questionText": "Which is NOT a characteristic of a good hash function?",
+    "options": [
+      "Distributes keys uniformly",
+      "Easy to compute",
+      "Always produces the same hash for the same key",
+      "Always produces different hashes for different keys"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "A hash function cannot always produce different hashes for different keys (this would require infinite hash values). Collisions are inevitable."
+  },
+  {
+    "id": "dsa076",
+    "questionText": "In linear probing, what is the probe sequence for key k?",
+    "options": [
+      "h(k), h(k)+1, h(k)+2, ...",
+      "h(k), h(k)+1², h(k)+2², ...",
+      "h(k), h(k)+c, h(k)+2c, ...",
+      "h(k), h₂(k), h₃(k), ..."
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Linear probing uses the sequence h(k), h(k)+1, h(k)+2, ... (mod m), checking consecutive slots until an empty one is found."
+  },
+  {
+    "id": "dsa077",
+    "questionText": "What is the main drawback of adjacency matrix representation?",
+    "options": [
+      "Slow edge lookup",
+      "Difficult to implement",
+      "High space complexity for sparse graphs",
+      "Cannot represent weighted graphs"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Adjacency matrix always uses O(V²) space regardless of the number of edges, making it wasteful for sparse graphs."
+  },
+  {
+    "id": "dsa078",
+    "questionText": "Which graph algorithm can produce a topological sort?",
+    "options": [
+      "BFS",
+      "DFS",
+      "Dijkstra's",
+      "Bellman-Ford"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "DFS can produce topological sort by processing vertices in decreasing order of their finishing times (for DAGs)."
+  },
+  {
+    "id": "dsa079",
+    "questionText": "What is the minimum number of vertices a strongly connected component can have?",
+    "options": [
+      "0",
+      "1",
+      "2",
+      "3"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "A strongly connected component can have just 1 vertex (a single vertex with a self-loop, or isolated vertex)."
+  },
+  {
+    "id": "dsa080",
+    "questionText": "In MST algorithms, what does 'safe edge' mean?",
+    "options": [
+      "Edge that doesn't create a cycle",
+      "Edge with minimum weight",
+      "Edge that can be added while maintaining MST property",
+      "Edge connecting two different trees"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "A safe edge is one that can be added to the current set of edges while maintaining the property that this set is part of some MST."
+  },
+  {
+    "id": "dsa081",
+    "questionText": "What is the time complexity of Heap Sort?",
+    "options": [
+      "O(n)",
+      "O(n log n)",
+      "O(n²)",
+      "O(log n)"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Heap Sort runs in O(n log n) time: O(n) to build heap + n times O(log n) for extract-max and heapify operations."
+  },
+  {
+    "id": "dsa082",
+    "questionText": "Which property makes Heap Sort better than Merge Sort in some cases?",
+    "options": [
+      "Better time complexity",
+      "Stable sorting",
+      "In-place sorting",
+      "Adaptive behavior"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Heap Sort is in-place (O(1) extra space) while Merge Sort requires O(n) extra space, making Heap Sort better for memory-constrained environments."
+  },
+  {
+    "id": "dsa083",
+    "questionText": "What is the typical load factor that maintains good hash table performance?",
+    "options": [
+      "α ≤ 0.5",
+      "α ≤ 0.75",
+      "α ≤ 1.0",
+      "α can be any value"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Load factors around 0.75 or less typically maintain good hash table performance, balancing space usage with collision frequency."
+  },
+  {
+    "id": "dsa084",
+    "questionText": "Which operation is NOT typically provided by a priority queue ADT?",
+    "options": [
+      "Insert",
+      "Extract-Min/Max",
+      "Peek/Find-Min/Max",
+      "Random access by index"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "Priority queues don't provide random access by index - they're designed for priority-based access, not positional access."
+  },
+  {
+    "id": "dsa085",
+    "questionText": "In the context of algorithm analysis, what does 'amortized' mean?",
+    "options": [
+      "Worst-case analysis",
+      "Best-case analysis",
+      "Average cost per operation over a sequence",
+      "Space complexity analysis"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Amortized analysis considers the average cost per operation over a worst-case sequence of operations, not just individual operation costs."
+  },
+  {
+    "id": "dsa086",
+    "questionText": "What is the key insight that makes Dynamic Programming efficient?",
+    "options": [
+      "Using recursion",
+      "Avoiding recomputation of overlapping subproblems",
+      "Using more memory",
+      "Dividing the problem"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "DP's efficiency comes from storing solutions to subproblems and reusing them, avoiding the exponential recomputation in naive recursion."
+  },
+  {
+    "id": "dsa087",
+    "questionText": "Which statement about NP-Completeness is correct?",
+    "options": [
+      "All NP-Complete problems have polynomial solutions",
+      "If any NP-Complete problem has polynomial solution, then P = NP",
+      "NP-Complete problems cannot be solved",
+      "Greedy always works for NP-Complete problems"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "NP-Complete problems are the 'hardest' problems in NP. Finding a polynomial solution to any one implies P = NP."
+  },
+  {
+    "id": "dsa088",
+    "questionText": "What is the main difference between Depth-Limited Search and DFS?",
+    "options": [
+      "Different data structures used",
+      "DLS has a maximum depth limit",
+      "DLS is iterative, DFS is recursive",
+      "DLS works only on trees"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Depth-Limited Search is DFS with a predetermined maximum depth limit to avoid infinite paths in infinite spaces."
+  },
+  {
+    "id": "dsa089",
+    "questionText": "Which scenario would make Quick Sort perform poorly?",
+    "options": [
+      "Random input data",
+      "Already sorted input with poor pivot selection",
+      "Large input size",
+      "Floating point numbers"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Quick Sort performs poorly (O(n²)) when the pivot is consistently the smallest or largest element, as in sorted arrays with poor pivot selection."
+  },
+  {
+    "id": "dsa090",
+    "questionText": "What is the relationship between Big-O, Big-Ω, and Big-Θ?",
+    "options": [
+      "O provides lower bound, Ω provides upper bound",
+      "O provides upper bound, Ω provides lower bound, Θ provides tight bound",
+      "They are all equivalent",
+      "Θ is always better than O and Ω"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "O-notation gives upper bounds, Ω-notation gives lower bounds, and Θ-notation gives tight bounds (both upper and lower)."
+  },
+  {
+    "id": "dsa091",
+    "questionText": "Why is Binary Search more efficient than Linear Search?",
+    "options": [
+      "Binary Search uses less memory",
+      "Binary Search eliminates half the search space each iteration",
+      "Binary Search works on unsorted arrays",
+      "Binary Search is easier to implement"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Binary Search's efficiency comes from eliminating half the remaining search space with each comparison, leading to O(log n) complexity."
+  },
+  {
+    "id": "dsa092",
+    "questionText": "What is a key requirement for applying Binary Search?",
+    "options": [
+      "Array must be unsorted",
+      "Array must be sorted",
+      "Array must have unique elements",
+      "Array must be of even length"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Binary Search requires the array to be sorted so it can decide which half to continue searching based on comparisons."
+  },
+  {
+    "id": "dsa093",
+    "questionText": "In a complete binary tree with n nodes, what is the number of leaf nodes?",
+    "options": [
+      "⌊n/2⌋",
+      "⌈n/2⌉",
+      "⌊(n+1)/2⌋",
+      "⌈(n+1)/2⌉"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "In a complete binary tree with n nodes, the number of leaf nodes is ⌈n/2⌉."
+  },
+  {
+    "id": "dsa094",
+    "questionText": "What is the main advantage of Double Hashing over Linear and Quadratic Probing?",
+    "options": [
+      "Simpler implementation",
+      "Better distribution of probe sequences",
+      "Requires less memory",
+      "Faster computation"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Double Hashing provides better distribution of probe sequences, reducing clustering effects that occur in linear and quadratic probing."
+  },
+  {
+    "id": "dsa095",
+    "questionText": "Which algorithm design technique does Merge Sort employ?",
+    "options": [
+      "Greedy",
+      "Dynamic Programming",
+      "Divide and Conquer",
+      "Backtracking"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Merge Sort uses Divide and Conquer: divide array into halves, recursively sort each half, then merge the sorted halves."
+  },
+  {
+    "id": "dsa096",
+    "questionText": "What is the time complexity of deleting an arbitrary element from a Binary Search Tree?",
+    "options": [
+      "O(1)",
+      "O(log n) average, O(n) worst case",
+      "O(n) always",
+      "O(log n) always"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "BST deletion is O(log n) in balanced trees but O(n) in worst case when tree degenerates to a linear chain."
+  },
+  {
+    "id": "dsa097",
+    "questionText": "What does the relaxation step do in shortest path algorithms?",
+    "options": [
+      "Finds the shortest edge",
+      "Updates distance estimates if a shorter path is found",
+      "Removes edges from the graph",
+      "Adds vertices to the solution"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Relaxation updates the shortest distance estimate to a vertex if a shorter path through another vertex is discovered."
+  },
+  {
+    "id": "dsa098",
+    "questionText": "Which data structure is most appropriate for implementing BFS?",
+    "options": [
+      "Stack",
+      "Queue",
+      "Priority Queue",
+      "Linked List"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "BFS uses a queue to process vertices in First-In-First-Out order, ensuring vertices are explored level by level."
+  },
+  {
+    "id": "dsa099",
+    "questionText": "What is the primary goal of algorithm design techniques?",
+    "options": [
+      "Make code shorter",
+      "Reduce time or space complexity",
+      "Make algorithms harder to understand",
+      "Increase memory usage"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Algorithm design techniques aim to find efficient solutions by reducing time complexity, space complexity, or both."
+  },
+  {
+    "id": "dsa100",
+    "questionText": "Which property is essential for a problem to be solved using Greedy approach?",
+    "options": [
+      "Optimal substructure only",
+      "Overlapping subproblems only",
+      "Greedy choice property and optimal substructure",
+      "Neither optimal substructure nor greedy choice property"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Greedy algorithms require both greedy choice property (local optimal choices lead to global optimum) and optimal substructure."
   }
 ]
