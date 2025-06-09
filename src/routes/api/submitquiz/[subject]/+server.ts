@@ -1,6 +1,8 @@
 import { json } from '@sveltejs/kit';
-import fs from 'fs/promises';
-import path from 'path';
+import {pc } from '../../../../data/pc';
+import { dsa } from '../../../../data/dsa';
+import { toe } from '../../../../data/toe';
+import { codd } from '../../../../data/codd';
 
 export async function POST({ request, params }) {
   const subject = params.subject;
@@ -10,17 +12,25 @@ export async function POST({ request, params }) {
     return json({ error: 'Invalid submission data' }, { status: 400 });
   }
 
-  const validSubjects = ['dsa', 'pc', 'toe'];
-  if (!validSubjects.includes(subject)) {
-    return json({ error: 'Invalid subject' }, { status: 400 });
-  }
-
-  const filePath = path.join(process.cwd(), 'questions', `${subject}.json`);
+  let allQuestions;
+    switch (subject) {
+      case 'dsa':
+        allQuestions = dsa;
+        break;
+      case 'toe':
+        allQuestions = toe;
+        break;
+      case 'pc':
+        allQuestions = pc;
+        break;
+      case 'codd':
+        allQuestions = codd;
+        break;
+      default:
+        return json({ error: 'Invalid subject' }, { status: 400 });
+    }
 
   try {
-    const fileContent = await fs.readFile(filePath, 'utf-8');
-    const allQuestionsFull = JSON.parse(fileContent); // All questions with answers and explanations
-
     let correctCount = 0;
     const reviewData = [];
 
@@ -28,7 +38,7 @@ export async function POST({ request, params }) {
       const questionId = submission.questionIds[i];
       const userAnswerIndex = submission.answers[i]; // User's selected option index
 
-      const questionData = allQuestionsFull.find(q => q.id === questionId);
+      const questionData = allQuestions.find(q => q.id === questionId);
 
       if (questionData) {
         const isCorrect = (userAnswerIndex === questionData.correctAnswerIndex);

@@ -7,6 +7,8 @@ export async function load({ params }) {
 	subjectDisplayableName = 'Program Construction';
   } else if (params.subject === 'toe') {
 	subjectDisplayableName = 'Theory of Electricity';
+  } else if (params.subject === 'codd') {
+	subjectDisplayableName = 'Computer Organization';
   } else {
 	subjectDisplayableName = 'Unknown Subject';
   }

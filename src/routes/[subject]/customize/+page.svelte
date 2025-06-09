@@ -13,6 +13,8 @@
 		subjectDisplayableName = 'Program Construction';
 	} else if (subject === 'toe') {
 		subjectDisplayableName = 'Theory of Electricity';
+	} else if (subject === 'codd') {
+		subjectDisplayableName = 'Computer Organization';
 	} else {
 		subjectDisplayableName = 'Unknown Subject';
 	}
