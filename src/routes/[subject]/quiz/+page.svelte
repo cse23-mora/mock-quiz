@@ -5,24 +5,12 @@
 
 	export let data; // Loaded by +page.ts
 
-	const { subject, questions, totalQuestions, estimatedTotalSeconds } = data;
+	const { subject, questions, totalQuestions, estimatedTotalSeconds, subjectDisplayableName } = data;
 
 	let currentQuestionIndex = 0;
 	let selectedAnswers = new Array(totalQuestions).fill(null); // Store index of selected option
 	let timeLeft = estimatedTotalSeconds;
 	let timerInterval;
-
-	// Give subject a more readable name
-	let subjectDisplayableName = '';
-	if (subject === 'dsa') {
-		subjectDisplayableName = 'Data Structures and Algorithms';
-	} else if (subject === 'pc') {
-		subjectDisplayableName = 'Program Construction';
-	} else if (subject === 'toe') {
-		subjectDisplayableName = 'Theory of Electricity';
-	} else {
-		subjectDisplayableName = 'Unknown Subject';
-	}
 
 	$: currentQuestion = questions[currentQuestionIndex];
 	$: progressPercentage = ((currentQuestionIndex + 1) / totalQuestions) * 100;
@@ -216,11 +204,6 @@
 				<p class="text-slate-600 dark:text-slate-400">Please wait while we prepare your quiz...</p>
 			</div>
 		{/if}
-	</div>
-
-	<!-- Footer -->
-	<div class="mt-8 text-center text-sm text-slate-500 dark:text-slate-400">
-		<p>Need help? Press <kbd class="px-2 py-1 bg-slate-200 dark:bg-slate-700 rounded text-xs">?</kbd> for shortcuts</p>
 	</div>
 </div>
 

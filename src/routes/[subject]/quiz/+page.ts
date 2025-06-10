@@ -1,4 +1,5 @@
 import { error } from '@sveltejs/kit';
+import { subjects } from '$lib/subjects'
 
 export async function load({ params, url, fetch }) {
   const subject = params.subject;
@@ -15,14 +16,16 @@ export async function load({ params, url, fetch }) {
       throw error(404, `No questions found for subject '${subject}' with count ${questionsCount}. Try selecting fewer questions or check if questions exist for this subject.`);
     }
 
-    // Estimate time: N questions * 1.5 minutes/question = total minutes
-    const estimatedTotalSeconds = questions.length * 1.5 * 60;
+    // Estimate time: N questions * 15 seconds/question = total seconds
+    const estimatedTotalSeconds = questions.length * 15; // 15 seconds per question
+    let subjectDisplayableName = subjects.get(subject)?.name || 'Unknown Subject';
 
     return {
       subject: params.subject,
       questions, // These questions do NOT have correctAnswerIndex
       totalQuestions: questions.length, // Actual number of questions received
-      estimatedTotalSeconds
+      estimatedTotalSeconds,
+      subjectDisplayableName
     };
   } catch (err) {
     // Handle errors from fetch or if questions are empty

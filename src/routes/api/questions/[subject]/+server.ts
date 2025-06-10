@@ -1,8 +1,5 @@
 import { json } from '@sveltejs/kit';
-import {pc } from '../../../../data/pc';
-import { dsa } from '../../../../data/dsa';
-import { toe } from '../../../../data/toe';
-import { codd } from '../../../../data/codd';
+import { subjects } from '$lib/subjects';
 
 // Helper function to shuffle an array
 function shuffleArray(array) {
@@ -18,23 +15,12 @@ export async function GET({ params, url }) {
   const requestedCount = parseInt(url.searchParams.get('count') || '10');
 
   try {
-    let allQuestions;
-    switch (subject) {
-      case 'dsa':
-        allQuestions = dsa;
-        break;
-      case 'toe':
-        allQuestions = toe;
-        break;
-      case 'pc':
-        allQuestions = pc;
-        break;
-      case 'codd':
-        allQuestions = codd;
-        break;
-      default:
-        return json({ error: 'Invalid subject' }, { status: 400 });
+    const subjectData = subjects.get(subject);
+    if (!subjectData) {
+      return json({ error: 'Invalid subject' }, { status: 400 });
     }
+
+    const allQuestions = subjectData.questions;
 
     const shuffledQuestions = shuffleArray([...allQuestions]);
     const selectedQuestions = shuffledQuestions.slice(0, requestedCount);
