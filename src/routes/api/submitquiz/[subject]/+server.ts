@@ -1,8 +1,5 @@
 import { json } from '@sveltejs/kit';
-import {pc } from '../../../../data/pc';
-import { dsa } from '../../../../data/dsa';
-import { toe } from '../../../../data/toe';
-import { codd } from '../../../../data/codd';
+import { subjects } from '$lib/subjects';
 
 export async function POST({ request, params }) {
   const subject = params.subject;
@@ -12,23 +9,12 @@ export async function POST({ request, params }) {
     return json({ error: 'Invalid submission data' }, { status: 400 });
   }
 
-  let allQuestions;
-    switch (subject) {
-      case 'dsa':
-        allQuestions = dsa;
-        break;
-      case 'toe':
-        allQuestions = toe;
-        break;
-      case 'pc':
-        allQuestions = pc;
-        break;
-      case 'codd':
-        allQuestions = codd;
-        break;
-      default:
-        return json({ error: 'Invalid subject' }, { status: 400 });
-    }
+  const subjectData = subjects.get(subject);
+  if (!subjectData) {
+    return json({ error: 'Invalid subject' }, { status: 400 });
+  }
+
+  const allQuestions = subjectData.questions;
 
   try {
     let correctCount = 0;

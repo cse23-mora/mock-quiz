@@ -1,8 +1,5 @@
 name: Create vercel preview URL on pull request
 on:
-  pull_request:
-    branches:
-      - main
   push: # Added to trigger on commits
     branches:
       - main # Or other branches you want to deploy on push
@@ -19,6 +16,3 @@ jobs:
           vercel-org-id: ${{ secrets.ORG_ID }}
           vercel-project-id: ${{ secrets.PROJECT_ID }}
           vercel-args: '--prod'
-      - name: preview-url
-        run: |
-          echo ${{ steps.vercel-deploy.outputs.preview-url }}  addhere to promote to production in vercel and give me update code

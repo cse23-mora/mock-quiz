@@ -1,81 +1,107 @@
 import katex from 'katex';
 import 'katex/dist/katex.min.css';
 
-// Cache the auto-render function once loaded
-let renderMathInElement: any = null;
-let autoRenderLoaded = false;
+// Enhanced LaTeX render action
+// File: $lib/actions/katex.js
 
-async function loadAutoRender() {
-  if (autoRenderLoaded) return renderMathInElement;
-  
-  try {
-    const autoRenderModule = await import('katex/dist/contrib/auto-render.js');
-    renderMathInElement = autoRenderModule.default || autoRenderModule;
-    autoRenderLoaded = true;
-    return renderMathInElement;
-  } catch (e) {
-    console.warn("KaTeX auto-render extension not found:", e);
-    autoRenderLoaded = true; // Prevent repeated attempts
-    return null;
-  }
-}
-
-export function latexRender(node: HTMLElement) {
-  let isDestroyed = false;
-
-  const renderMath = async () => {
-    if (isDestroyed) return;
+export function latexRender(node, params = {}) {
+    let observer;
     
-    const autoRender = await loadAutoRender();
-    
-    if (autoRender && !isDestroyed) {
-      try {
-        autoRender(node, {
-          delimiters: [
-            { left: "\\[", right: "\\]", display: true },
-            { left: "\\(", right: "\\)", display: false },
-            { left: "$$", right: "$$", display: true },
-            { left: "$", right: "$", display: false }
-          ],
-          throwOnError: false,
-          ignoredTags: ["script", "noscript", "style", "textarea", "pre", "code"],
-          ignoredClasses: ["no-katex"]
-        });
-      } catch (e) {
-        console.error('KaTeX rendering error:', e);
-      }
-    } else if (!isDestroyed) {
-      // Fallback: try to render simple math expressions
-      const textContent = node.textContent?.trim();
-      if (textContent) {
+    function renderLatex() {
+        if (typeof window === 'undefined' || !window.katex) return;
+        
         try {
-          // Check if it looks like a math expression
-          if (textContent.includes('\\') || textContent.match(/\$.*\$/)) {
-            const cleanText = textContent.replace(/^\$+|\$+$/g, '');
-            katex.render(cleanText, node, { 
-              throwOnError: false, 
-              displayMode: textContent.includes('$$') || textContent.includes('\\[')
+            // Find all text nodes that might contain LaTeX
+            const textNodes = getTextNodes(node);
+            
+            textNodes.forEach(textNode => {
+                const text = textNode.textContent;
+                if (text.includes('$') || text.includes('\\')) {
+                    // Create a temporary element to render LaTeX
+                    const tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = text;
+                    
+                    // Render inline math ($...$)
+                    tempDiv.innerHTML = tempDiv.innerHTML.replace(/\$([^$]+)\$/g, (match, latex) => {
+                        try {
+                            return katex.renderToString(latex, { throwOnError: false });
+                        } catch (e) {
+                            return match;
+                        }
+                    });
+                    
+                    // Render display math ($$...$$)
+                    tempDiv.innerHTML = tempDiv.innerHTML.replace(/\$\$([^$]+)\$\$/g, (match, latex) => {
+                        try {
+                            return katex.renderToString(latex, { throwOnError: false, displayMode: true });
+                        } catch (e) {
+                            return match;
+                        }
+                    });
+                    
+                    // Replace the original text node with rendered content
+                    const newNode = document.createElement('span');
+                    newNode.innerHTML = tempDiv.innerHTML;
+                    textNode.parentNode.replaceChild(newNode, textNode);
+                }
             });
-          }
-        } catch (e) {
-          console.error('Fallback KaTeX rendering error:', e);
-          node.innerHTML = `<span style="color: red;">Math rendering failed</span>`;
+        } catch (error) {
+            console.warn('LaTeX rendering failed:', error);
         }
-      }
     }
-  };
-
-  // Initial render
-  renderMath();
-
-  return {
-    update() {
-      if (!isDestroyed) {
-        renderMath();
-      }
-    },
-    destroy() {
-      isDestroyed = true;
+    
+    function getTextNodes(node) {
+        const textNodes = [];
+        const walker = document.createTreeWalker(
+            node,
+            NodeFilter.SHOW_TEXT,
+            null,
+            false
+        );
+        
+        let currentNode;
+        while (currentNode = walker.nextNode()) {
+            textNodes.push(currentNode);
+        }
+        
+        return textNodes;
     }
-  };
+    
+    // Initial render
+    renderLatex();
+    
+    // Set up mutation observer to watch for content changes
+    if (typeof MutationObserver !== 'undefined') {
+        observer = new MutationObserver((mutations) => {
+            let shouldRender = false;
+            mutations.forEach((mutation) => {
+                if (mutation.type === 'childList' || mutation.type === 'characterData') {
+                    shouldRender = true;
+                }
+            });
+            
+            if (shouldRender) {
+                // Debounce rendering to avoid excessive calls
+                setTimeout(renderLatex, 10);
+            }
+        });
+        
+        observer.observe(node, {
+            childList: true,
+            subtree: true,
+            characterData: true
+        });
+    }
+    
+    return {
+        update(newParams) {
+            params = { ...params, ...newParams };
+            renderLatex();
+        },
+        destroy() {
+            if (observer) {
+                observer.disconnect();
+            }
+        }
+    };
 }

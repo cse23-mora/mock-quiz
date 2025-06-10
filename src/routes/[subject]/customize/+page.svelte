@@ -4,23 +4,10 @@
 	// The load function already provides 'subject' in the 'data' prop.
 	export let data;
 	const subject = data.subject;
-
-	// Give subject a more readable name
-	let subjectDisplayableName = '';
-	if (subject === 'dsa') {
-		subjectDisplayableName = 'Data Structures and Algorithms';
-	} else if (subject === 'pc') {
-		subjectDisplayableName = 'Program Construction';
-	} else if (subject === 'toe') {
-		subjectDisplayableName = 'Theory of Electricity';
-	} else if (subject === 'codd') {
-		subjectDisplayableName = 'Computer Organization';
-	} else {
-		subjectDisplayableName = 'Unknown Subject';
-	}
+	const subjectDisplayableName = data.subjectDisplayableName;
 
 	let numQuestions = 10; // Default number of questions
-	const timePerQuestion = 1.5; // Minutes
+	const timePerQuestion = 0.25; // Minutes
 
 	$: estimatedTime = numQuestions * timePerQuestion; // Reactive statement for estimated time
 
@@ -69,7 +56,6 @@
 						id="numQuestions"
 						bind:value={numQuestions}
 						min="1"
-						max="50"
 						class="w-full px-4 py-3 bg-white/50 dark:bg-slate-700/50 border-2 border-slate-200 dark:border-slate-600 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 dark:focus:border-blue-400 transition-all duration-200 text-slate-800 dark:text-slate-200 placeholder-slate-500 dark:placeholder-slate-400"
 						placeholder="Enter number of questions"
 					/>
@@ -103,7 +89,7 @@
 							{estimatedTime} minutes
 						</p>
 						<p class="text-xs text-slate-500 dark:text-slate-400">
-							Based on {numQuestions} questions at 1.5 min each
+							Based on {numQuestions} questions at 15 seconds each
 						</p>
 					</div>
 				</div>

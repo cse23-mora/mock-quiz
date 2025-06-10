@@ -1,10 +1,7 @@
 <script lang='ts'>
-	const subjects = [
-		{ name: 'Data Structures and Algorithms', slug: 'dsa' },
-		{ name: 'Program Construction', slug: 'pc' },
-		{ name: 'Theory of Electricity', slug: 'toe' },
-		{ name: 'Computer Organization', slug: 'codd' }
-	];
+	export let data;
+	const subjects = data.subjects;
+
 </script>
 
 <div class="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-slate-900 dark:via-slate-800 dark:to-indigo-900 p-4 sm:p-6 flex flex-col items-center justify-center transition-colors duration-300">
@@ -18,7 +15,7 @@
 				</svg>
 			</div>
 			<h1 class="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 bg-clip-text text-transparent mb-2">
-				Quiz Platform
+				CSE 23 ByteQuiz
 			</h1>
 			<h2 class="text-xl font-medium text-slate-600 dark:text-slate-300">
 				Choose a Subject
