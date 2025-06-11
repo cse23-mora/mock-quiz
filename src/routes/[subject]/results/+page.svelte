@@ -212,10 +212,7 @@
 									</svg>
 									Your Answer:
 								</p>
-								<div class="p-4 rounded-xl border-2 {`
-									item.userAnswerIndex === null ? 'bg-slate-100 dark:bg-slate-700 border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-400' :
-									item.isCorrect ? 'bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800 text-green-800 dark:text-green-200' : 'bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800 text-red-800 dark:text-red-200'
-								`}">
+								<div class="p-4 rounded-xl border-2 bg-slate-100 dark:bg-slate-700 border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-400">
 									{#if item.userAnswerIndex !== null && item.options[item.userAnswerIndex]}
 										<div class="prose prose-sm max-w-none">
 											{@html item.options[item.userAnswerIndex]}
@@ -259,7 +256,7 @@
 								</p>
 								<div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-600">
 									{#if item.explanation}
-										<div class="prose prose-sm prose-slate dark:prose-invert max-w-none">
+										<div class="prose prose-sm prose-slate dark:prose-invert max-w-none text-slate-600 dark:text-slate-400">
 											{@html item.explanation}
 										</div>
 									{:else}
