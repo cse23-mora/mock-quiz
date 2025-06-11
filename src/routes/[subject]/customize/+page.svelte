@@ -6,15 +6,15 @@
 	const subject = data.subject;
 	const subjectDisplayableName = data.subjectDisplayableName;
 
-	let numQuestions = 10; // Default number of questions
-	const timePerQuestion = 0.25; // Minutes
+	let numQuestions = 50; // Default number of questions
+	let timePerQuestion = 15; // Default time per question in seconds
 
-	$: estimatedTime = numQuestions * timePerQuestion; // Reactive statement for estimated time
+	$: estimatedTime = Math.round((numQuestions * timePerQuestion) / 60 * 10) / 10; // Reactive statement for estimated time in minutes
 
 	// Function to handle starting the quiz (for now, just navigates)
 	function startQuiz() {
-		// Later, this will involve passing numQuestions to the quiz page, perhaps via query params or a store
-		window.location.href = `/${subject}/quiz?questions=${numQuestions}`;
+		// Pass both numQuestions and timePerQuestion to the quiz page via query params
+		window.location.href = `/${subject}/quiz?questions=${numQuestions}&time=${timePerQuestion}`;
 	}
 </script>
 
@@ -73,6 +73,39 @@
 				</p>
 			</div>
 
+			<!-- Time Per Question Input -->
+			<div class="space-y-3">
+				<label for="timePerQuestion" class="flex items-center gap-2 text-sm font-semibold text-slate-700 dark:text-slate-300">
+					<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+					</svg>
+					Time Per Question (seconds):
+				</label>
+				<div class="relative">
+					<input
+						type="number"
+						id="timePerQuestion"
+						bind:value={timePerQuestion}
+						min="5"
+						max="300"
+						step="5"
+						class="w-full px-4 py-3 bg-white/50 dark:bg-slate-700/50 border-2 border-slate-200 dark:border-slate-600 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 dark:focus:border-blue-400 transition-all duration-200 text-slate-800 dark:text-slate-200 placeholder-slate-500 dark:placeholder-slate-400"
+						placeholder="Enter seconds per question"
+					/>
+					<div class="absolute right-3 top-1/2 transform -translate-y-1/2 text-slate-400 dark:text-slate-500">
+						<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+						</svg>
+					</div>
+				</div>
+				<p class="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1">
+					<svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+						<path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+					</svg>
+					Choose between 5-300 seconds (5 minute max)
+				</p>
+			</div>
+
 			<!-- Estimated Time Display -->
 			<div class="p-4 bg-gradient-to-r from-slate-50 to-blue-50 dark:from-slate-700/50 dark:to-slate-600/50 rounded-xl border border-slate-200 dark:border-slate-600">
 				<div class="flex items-center gap-3">
@@ -89,7 +122,7 @@
 							{estimatedTime} minutes
 						</p>
 						<p class="text-xs text-slate-500 dark:text-slate-400">
-							Based on {numQuestions} questions at 15 seconds each
+							Based on {numQuestions} questions at {timePerQuestion} seconds each
 						</p>
 					</div>
 				</div>
