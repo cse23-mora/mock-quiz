@@ -4,6 +4,7 @@ import { subjects } from '$lib/subjects'
 export async function load({ params, url, fetch }) {
   const subject = params.subject;
   const questionsCount = url.searchParams.get('questions') || '5'; // Default to 5 if not specified
+  const timePerQuestion = parseInt(url.searchParams.get('time')  || '15'); // Default to 15 seconds if not specified
 
   try {
     const response = await fetch(`/api/questions/${subject}?count=${questionsCount}`);
@@ -16,8 +17,8 @@ export async function load({ params, url, fetch }) {
       throw error(404, `No questions found for subject '${subject}' with count ${questionsCount}. Try selecting fewer questions or check if questions exist for this subject.`);
     }
 
-    // Estimate time: N questions * 15 seconds/question = total seconds
-    const estimatedTotalSeconds = questions.length * 15; // 15 seconds per question
+    // Estimate time: N questions * timePerQuestion seconds/question = total seconds
+    const estimatedTotalSeconds = questions.length * timePerQuestion;
     let subjectDisplayableName = subjects.get(subject)?.name || 'Unknown Subject';
 
     return {
