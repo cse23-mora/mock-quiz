@@ -192,18 +192,6 @@ export const pc = [
     explanation: "The Strategy pattern defines a family of algorithms, encapsulates each one, and makes them interchangeable, allowing algorithms to vary independently from clients."
   },
   {
-    id: "dp009",
-    questionText: "Which pattern is useful for implementing undo functionality?",
-    options: [
-      "Memento",
-      "Command",
-      "State",
-      "Visitor"
-    ],
-    correctAnswerIndex: 1,
-    explanation: "The Command pattern encapsulates requests as objects, allowing for parameterization, queuing, logging, and support of undoable operations."
-  },
-  {
     id: "dp010",
     questionText: "What is the primary difference between the Chain of Responsibility and Decorator patterns?",
     options: [
