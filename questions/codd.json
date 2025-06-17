@@ -3,82 +3,82 @@
     "id": "dd001",
     "questionText": "What is the primary advantage of digital systems over analog systems?",
     "options": [
+      "Smaller size",
       "Higher speed",
       "Lower cost",
-      "Reproducibility of results",
-      "Smaller size"
+      "Reproducibility of results"
     ],
-    "correctAnswerIndex": 2,
+    "correctAnswerIndex": 3,
     "explanation": "Digital systems offer reproducibility of results because they work with discrete values (0s and 1s), making them less susceptible to noise and variations compared to analog systems that work with continuous values."
   },
   {
     "id": "dd002",
     "questionText": "In CMOS logic, what voltage ranges typically represent HIGH and LOW logic levels?",
     "options": [
-      "HIGH: 2V-3.3V, LOW: 0V-0.8V",
-      "HIGH: 1V-2V, LOW: 0V-0.5V",
       "HIGH: 3V-5V, LOW: 0V-1V",
-      "HIGH: 4V-5V, LOW: 0V-1V"
+      "HIGH: 2V-3.3V, LOW: 0V-0.8V",
+      "HIGH: 4V-5V, LOW: 0V-1V",
+      "HIGH: 1V-2V, LOW: 0V-0.5V"
     ],
-    "correctAnswerIndex": 0,
+    "correctAnswerIndex": 1,
     "explanation": "In CMOS (Low Voltage) technology, HIGH is typically represented by voltages from 2V to 3.3V, while LOW is represented by voltages from 0V to 0.8V."
   },
   {
     "id": "dd003",
     "questionText": "What is the duty cycle of a periodic waveform with pulse width tw = 2ms and period T = 8ms?",
     "options": [
+      "20%",
       "25%",
-      "50%",
       "75%",
-      "20%"
+      "50%"
     ],
-    "correctAnswerIndex": 0,
+    "correctAnswerIndex": 1,
     "explanation": "Duty cycle = (tw/T) × 100% = (2ms/8ms) × 100% = 25%. This represents the percentage of time the signal is HIGH during one complete period."
   },
   {
     "id": "dd004",
     "questionText": "Convert the binary number 10110₂ to decimal.",
     "options": [
-      "22",
-      "23",
       "24",
-      "21"
+      "23",
+      "21",
+      "22"
     ],
-    "correctAnswerIndex": 0,
+    "correctAnswerIndex": 3,
     "explanation": "10110₂ = 1×2⁴ + 0×2³ + 1×2² + 1×2¹ + 0×2⁰ = 16 + 0 + 4 + 2 + 0 = 22₁₀"
   },
   {
     "id": "dd005",
     "questionText": "In two's complement representation, what is the decimal value of 1101₂ for a 4-bit system?",
     "options": [
+      "-4",
       "-3",
       "-2",
-      "-4",
       "13"
     ],
-    "correctAnswerIndex": 0,
+    "correctAnswerIndex": 1,
     "explanation": "In 4-bit two's complement, 1101₂ represents a negative number since MSB=1. To find its value: invert bits (0010₂) and add 1 = 0011₂ = 3₁₀, so the original number is -3."
   },
   {
     "id": "dd006",
     "questionText": "What does the XOR gate detect when used with multiple inputs?",
     "options": [
+      "Any input high",
       "Even parity",
       "Odd parity",
-      "All inputs high",
-      "Any input high"
+      "All inputs high"
     ],
-    "correctAnswerIndex": 1,
+    "correctAnswerIndex": 2,
     "explanation": "XOR gates detect odd parity - the output is HIGH when there is an odd number of 1s at the inputs. This property makes XOR gates useful in parity checking circuits."
   },
   {
     "id": "dd007",
     "questionText": "Which logic gate is the complement of XOR?",
     "options": [
+      "NOT",
       "NAND",
-      "NOR",
       "XNOR",
-      "NOT"
+      "NOR"
     ],
     "correctAnswerIndex": 2,
     "explanation": "XNOR (Exclusive NOR) is the complement of XOR. While XOR detects odd parity, XNOR detects even parity - it outputs HIGH when there is an even number of 1s at the inputs."
@@ -87,10 +87,10 @@
     "id": "dd008",
     "questionText": "For a truth table with 3 input variables, how many rows are needed?",
     "options": [
-      "6",
-      "8",
       "9",
-      "16"
+      "8",
+      "16",
+      "6"
     ],
     "correctAnswerIndex": 1,
     "explanation": "For N input variables, a truth table needs 2ᴺ rows to represent all possible input combinations. For 3 variables: 2³ = 8 rows."
@@ -100,32 +100,32 @@
     "questionText": "In K-map grouping rules, which group sizes are valid?",
     "options": [
       "Any size",
-      "Powers of 2 only (1, 2, 4, 8, 16...)",
       "Multiples of 3",
+      "Powers of 2 only (1, 2, 4, 8, 16...)",
       "Prime numbers only"
     ],
-    "correctAnswerIndex": 1,
+    "correctAnswerIndex": 2,
     "explanation": "K-map groups must contain 2ⁿ cells (1, 2, 4, 8, 16, etc.) to ensure proper Boolean simplification. This constraint comes from the binary nature of the variables."
   },
   {
     "id": "dd010",
     "questionText": "What is a minterm in Boolean algebra?",
     "options": [
-      "A sum term with all variables",
-      "A product term with all variables",
+      "The complement of a maxterm",
       "Any simplified expression",
-      "The complement of a maxterm"
+      "A product term with all variables",
+      "A sum term with all variables"
     ],
-    "correctAnswerIndex": 1,
+    "correctAnswerIndex": 2,
     "explanation": "A minterm is a product (AND) term that contains all variables in the function, either in true or complemented form. Each minterm corresponds to exactly one row in the truth table where the output is 1."
   },
   {
     "id": "dd011",
     "questionText": "Which Boolean law states that A + A·B = A?",
     "options": [
-      "Distributive Law",
-      "Absorption Law",
       "Associative Law",
+      "Absorption Law",
+      "Distributive Law",
       "De Morgan's Law"
     ],
     "correctAnswerIndex": 1,
@@ -135,24 +135,24 @@
     "id": "dd012",
     "questionText": "De Morgan's theorem states that (A·B)' equals:",
     "options": [
-      "A' + B'",
-      "A' · B'",
       "A + B",
+      "A' · B'",
+      "A' + B'",
       "(A + B)'"
     ],
-    "correctAnswerIndex": 0,
+    "correctAnswerIndex": 2,
     "explanation": "De Morgan's theorem states that (A·B)' = A' + B' and (A + B)' = A'·B'. The complement of a product equals the sum of the complements."
   },
   {
     "id": "dd013",
     "questionText": "What is the Sum of Products (SOP) canonical form also known as?",
     "options": [
-      "Conjunctive Normal Form",
-      "Disjunctive Normal Form",
+      "Maxterm expansion",
       "Product of Sums",
-      "Maxterm expansion"
+      "Disjunctive Normal Form",
+      "Conjunctive Normal Form"
     ],
-    "correctAnswerIndex": 1,
+    "correctAnswerIndex": 2,
     "explanation": "Sum of Products (SOP) canonical form is also called Disjunctive Normal Form or minterm expansion. It expresses a function as a sum (OR) of product (AND) terms."
   },
   {
@@ -160,21 +160,21 @@
     "questionText": "In the expression F = Σm(1,3,5,7), what do the numbers represent?",
     "options": [
       "Variable positions",
-      "Minterm numbers",
       "Maxterm numbers",
-      "Gate delays"
+      "Gate delays",
+      "Minterm numbers"
     ],
-    "correctAnswerIndex": 1,
+    "correctAnswerIndex": 3,
     "explanation": "The numbers 1,3,5,7 represent minterm numbers corresponding to the decimal values of the binary input combinations where the function output is 1."
   },
   {
     "id": "dd015",
     "questionText": "Which implementation uses fewer logic levels for the same function?",
     "options": [
-      "Sum of Products (SOP)",
       "Product of Sums (POS)",
+      "Depends on the specific function",
       "Both use the same number of levels",
-      "Depends on the specific function"
+      "Sum of Products (SOP)"
     ],
     "correctAnswerIndex": 2,
     "explanation": "Both SOP and POS canonical forms are two-level implementations. SOP uses AND gates followed by OR gate, while POS uses OR gates followed by AND gate."
@@ -184,35 +184,35 @@
     "questionText": "What is the primary advantage of NAND and NOR gates over AND and OR gates?",
     "options": [
       "Lower power consumption",
-      "Universal gate property",
+      "All of the above",
       "Faster switching speed",
-      "All of the above"
+      "Universal gate property"
     ],
-    "correctAnswerIndex": 3,
+    "correctAnswerIndex": 1,
     "explanation": "NAND and NOR gates offer multiple advantages: they are universal gates (can implement any Boolean function), generally have faster switching speeds in most technologies, and often consume less power."
   },
   {
     "id": "dd017",
     "questionText": "To implement F = AB + CD using only NAND gates, which expression should be used?",
     "options": [
-      "F = AB + CD",
       "F = ((AB)'·(CD)')'",
+      "F = AB + CD",
       "F = (AB)'+(CD)'",
       "F = (A'B' + C'D')'"
     ],
-    "correctAnswerIndex": 1,
+    "correctAnswerIndex": 0,
     "explanation": "Using De Morgan's law: F = AB + CD = (AB + CD)'' = ((AB)'·(CD)')'. This double complement allows implementation using only NAND gates."
   },
   {
     "id": "dd018",
     "questionText": "What is the main difference between combinational and sequential logic circuits?",
     "options": [
-      "Power consumption",
-      "Speed of operation",
       "Presence of memory/feedback",
-      "Number of inputs"
+      "Number of inputs",
+      "Speed of operation",
+      "Power consumption"
     ],
-    "correctAnswerIndex": 2,
+    "correctAnswerIndex": 0,
     "explanation": "Combinational circuits have no memory - outputs depend only on current inputs. Sequential circuits have memory elements (feedback loops) - outputs depend on both current inputs and previous state."
   },
   {
@@ -220,9 +220,9 @@
     "questionText": "In a 2-bit magnitude comparator, how many outputs are typically provided?",
     "options": [
       "1",
-      "2",
+      "4",
       "3",
-      "4"
+      "2"
     ],
     "correctAnswerIndex": 2,
     "explanation": "A magnitude comparator typically has three outputs: A>B, A=B, and A<B, allowing complete comparison between two binary numbers."
@@ -231,12 +231,12 @@
     "id": "dd020",
     "questionText": "What does a half adder produce?",
     "options": [
-      "Sum only",
+      "Sum, Carry, and Borrow",
       "Carry only",
-      "Sum and Carry",
-      "Sum, Carry, and Borrow"
+      "Sum only",
+      "Sum and Carry"
     ],
-    "correctAnswerIndex": 2,
+    "correctAnswerIndex": 3,
     "explanation": "A half adder takes two binary inputs and produces two outputs: Sum (A⊕B) and Carry (A·B). It cannot handle carry input from previous stages."
   },
   {
@@ -244,9 +244,9 @@
     "questionText": "Why is a full adder preferred over a half adder in multi-bit addition?",
     "options": [
       "Lower cost",
-      "Higher speed",
+      "Uses fewer gates",
       "Can handle carry input",
-      "Uses fewer gates"
+      "Higher speed"
     ],
     "correctAnswerIndex": 2,
     "explanation": "A full adder has an additional Carry-in input, making it essential for cascading multiple adders to create multi-bit adders. Half adders cannot handle carry propagation."
@@ -255,10 +255,10 @@
     "id": "dd022",
     "questionText": "What is the main disadvantage of a ripple carry adder?",
     "options": [
-      "High power consumption",
+      "Limited bit width",
       "Complex design",
       "Slow carry propagation",
-      "Limited bit width"
+      "High power consumption"
     ],
     "correctAnswerIndex": 2,
     "explanation": "In ripple carry adders, carry signals must propagate through each full adder sequentially from LSB to MSB, creating cumulative delay that limits the overall speed."
@@ -267,46 +267,46 @@
     "id": "dd023",
     "questionText": "Carry Lookahead Adders (CLA) improve performance by:",
     "options": [
-      "Using faster gates",
       "Computing carries in parallel",
       "Reducing the number of gates",
-      "Operating at higher voltage"
+      "Operating at higher voltage",
+      "Using faster gates"
     ],
-    "correctAnswerIndex": 1,
+    "correctAnswerIndex": 0,
     "explanation": "CLA generates carry bits in parallel using generate (G) and propagate (P) signals, eliminating the sequential carry propagation delay of ripple carry adders."
   },
   {
     "id": "dd024",
     "questionText": "To perform subtraction A - B using an adder, what modification is needed?",
     "options": [
-      "Add inverters to A inputs",
       "Add inverters to B inputs and set Cin=1",
+      "Change the power supply",
       "Use different gates",
-      "Change the power supply"
+      "Add inverters to A inputs"
     ],
-    "correctAnswerIndex": 1,
+    "correctAnswerIndex": 0,
     "explanation": "Subtraction A - B = A + (-B) = A + (B' + 1). This requires inverting B inputs and setting the initial carry-in to 1 to add 1 to the one's complement of B."
   },
   {
     "id": "dd025",
     "questionText": "What is overflow in binary arithmetic?",
     "options": [
-      "When result exceeds available bit width",
       "When carry is generated",
+      "When addition takes too long",
       "When inputs are negative",
-      "When addition takes too long"
+      "When result exceeds available bit width"
     ],
-    "correctAnswerIndex": 0,
+    "correctAnswerIndex": 3,
     "explanation": "Overflow occurs when the result of an arithmetic operation cannot be represented within the available number of bits, typically in signed arithmetic operations."
   },
   {
     "id": "dd026",
     "questionText": "A 3-to-8 decoder with enable input has how many possible output combinations?",
     "options": [
-      "8",
+      "24",
       "9",
-      "16",
-      "24"
+      "8",
+      "16"
     ],
     "correctAnswerIndex": 1,
     "explanation": "With enable: when EN=0, all outputs are 0 (1 combination). When EN=1, exactly one of 8 outputs is 1 (8 combinations). Total: 9 combinations."
@@ -315,24 +315,24 @@
     "id": "dd027",
     "questionText": "What does each output line of a decoder represent?",
     "options": [
+      "A literal",
       "A variable",
-      "A minterm",
       "A maxterm",
-      "A literal"
+      "A minterm"
     ],
-    "correctAnswerIndex": 1,
+    "correctAnswerIndex": 3,
     "explanation": "Each output of an n-to-2ⁿ decoder represents a specific minterm of the n input variables. This property makes decoders useful for implementing Boolean functions."
   },
   {
     "id": "dd028",
     "questionText": "How can Boolean functions be implemented using decoders?",
     "options": [
-      "Connect decoder outputs to AND gates",
       "Connect required minterm outputs to OR gate",
       "Use decoder with inverters",
-      "Connect decoder to multiplexer"
+      "Connect decoder to multiplexer",
+      "Connect decoder outputs to AND gates"
     ],
-    "correctAnswerIndex": 1,
+    "correctAnswerIndex": 0,
     "explanation": "Since decoder outputs represent minterms, any Boolean function expressed as sum of minterms can be implemented by OR-ing the appropriate decoder outputs."
   },
   {
@@ -340,67 +340,67 @@
     "questionText": "What is the main difference between an encoder and a decoder?",
     "options": [
       "Power consumption",
-      "Speed of operation",
       "Direction of conversion",
+      "Speed of operation",
       "Number of gates used"
     ],
-    "correctAnswerIndex": 2,
+    "correctAnswerIndex": 1,
     "explanation": "Encoders convert from wider input code to narrower output code (m-to-n where m > n), while decoders convert from narrower input to wider output (n-to-m where m ≤ 2ⁿ)."
   },
   {
     "id": "dd030",
     "questionText": "What problem does a priority encoder solve?",
     "options": [
+      "Large chip area",
       "Multiple inputs active simultaneously",
       "Slow switching speed",
-      "High power consumption",
-      "Large chip area"
+      "High power consumption"
     ],
-    "correctAnswerIndex": 0,
+    "correctAnswerIndex": 1,
     "explanation": "Priority encoders handle situations where multiple inputs might be active simultaneously by assigning priorities and encoding only the highest priority active input."
   },
   {
     "id": "dd031",
     "questionText": "A 4-to-1 multiplexer has how many control/select lines?",
     "options": [
-      "1",
-      "2",
       "3",
-      "4"
+      "4",
+      "1",
+      "2"
     ],
-    "correctAnswerIndex": 1,
+    "correctAnswerIndex": 3,
     "explanation": "An n-to-1 multiplexer requires log₂(n) select lines. For a 4-to-1 MUX: log₂(4) = 2 select lines are needed to choose among 4 inputs."
   },
   {
     "id": "dd032",
     "questionText": "How can a multiplexer be used to implement Boolean functions?",
     "options": [
-      "Connect function values to data inputs, variables to select lines",
       "Use only the select lines",
+      "Connect function values to data inputs, variables to select lines",
       "Connect to decoder first",
       "Not possible with multiplexers"
     ],
-    "correctAnswerIndex": 0,
+    "correctAnswerIndex": 1,
     "explanation": "Boolean functions can be implemented by connecting the function's truth table values to MUX data inputs and using input variables as select lines to choose the correct output value."
   },
   {
     "id": "dd033",
     "questionText": "What is the third state in a tri-state buffer?",
     "options": [
-      "Unknown state",
-      "High impedance (Hi-Z)",
+      "Oscillating state",
       "Medium voltage level",
-      "Oscillating state"
+      "Unknown state",
+      "High impedance (Hi-Z)"
     ],
-    "correctAnswerIndex": 1,
+    "correctAnswerIndex": 3,
     "explanation": "The third state is high impedance (Hi-Z), which effectively disconnects the output from the circuit, allowing multiple devices to share the same bus without interference."
   },
   {
     "id": "dd034",
     "questionText": "Why are tri-state buffers essential in bus-based systems?",
     "options": [
-      "Faster data transfer",
       "Lower power consumption",
+      "Faster data transfer",
       "Prevent bus contention",
       "Reduce noise"
     ],
@@ -411,48 +411,48 @@
     "id": "dd035",
     "questionText": "What is the main difference between a latch and a flip-flop?",
     "options": [
-      "Number of inputs",
-      "Power consumption",
       "Timing sensitivity",
-      "Output states"
+      "Output states",
+      "Number of inputs",
+      "Power consumption"
     ],
-    "correctAnswerIndex": 2,
+    "correctAnswerIndex": 0,
     "explanation": "Latches are level-sensitive (transparent when enable is active), while flip-flops are edge-sensitive (change state only on clock edges), providing better synchronization."
   },
   {
     "id": "dd036",
     "questionText": "What happens when both S and R inputs of an SR latch are HIGH?",
     "options": [
-      "Output becomes 0",
-      "Output becomes 1",
       "Forbidden/unstable state",
-      "Normal operation"
+      "Normal operation",
+      "Output becomes 0",
+      "Output becomes 1"
     ],
-    "correctAnswerIndex": 2,
+    "correctAnswerIndex": 0,
     "explanation": "When both S=1 and R=1, it creates a forbidden state because both outputs Q and Q' would try to be 0, violating the complementary nature of the outputs."
   },
   {
     "id": "dd037",
     "questionText": "A D latch is also known as:",
     "options": [
-      "Data latch",
-      "Transparent latch",
       "Gated latch",
-      "All of the above"
+      "All of the above",
+      "Transparent latch",
+      "Data latch"
     ],
-    "correctAnswerIndex": 3,
+    "correctAnswerIndex": 1,
     "explanation": "D latch is called by all these names: Data latch (stores data), Transparent latch (output follows input when enabled), and Gated latch (controlled by enable signal)."
   },
   {
     "id": "dd038",
     "questionText": "What does a JK flip-flop do when J=1 and K=1?",
     "options": [
-      "Sets output to 1",
-      "Resets output to 0",
       "Toggles the output",
-      "Maintains current state"
+      "Maintains current state",
+      "Resets output to 0",
+      "Sets output to 1"
     ],
-    "correctAnswerIndex": 2,
+    "correctAnswerIndex": 0,
     "explanation": "When J=1 and K=1, the JK flip-flop toggles its output state on each clock edge, changing from 0 to 1 or from 1 to 0."
   },
   {
@@ -460,9 +460,9 @@
     "questionText": "What is the characteristic equation for a D flip-flop?",
     "options": [
       "Q* = D",
+      "Q* = S + R'Q",
       "Q* = JQ' + K'Q",
-      "Q* = T⊕Q",
-      "Q* = S + R'Q"
+      "Q* = T⊕Q"
     ],
     "correctAnswerIndex": 0,
     "explanation": "The D flip-flop's next state Q* equals the D input: Q* = D. This makes it ideal for storing and transferring data in synchronous systems."
@@ -483,22 +483,22 @@
     "id": "dd041",
     "questionText": "What information is contained in a state table?",
     "options": [
-      "Current state and next state only",
+      "Timing information only",
       "Inputs and outputs only",
-      "Current state, inputs, next state, and outputs",
-      "Timing information only"
+      "Current state and next state only",
+      "Current state, inputs, next state, and outputs"
     ],
-    "correctAnswerIndex": 2,
+    "correctAnswerIndex": 3,
     "explanation": "A state table provides a complete tabular description showing current state, inputs, resulting next state, and corresponding outputs for all possible combinations."
   },
   {
     "id": "dd042",
     "questionText": "In designing a 3-bit binary counter using JK flip-flops, what are the inputs for the least significant bit?",
     "options": [
-      "J₀ = 0, K₀ = 0",
+      "J₀ = 0, K₀ = 1",
       "J₀ = 1, K₀ = 0",
       "J₀ = 1, K₀ = 1",
-      "J₀ = 0, K₀ = 1"
+      "J₀ = 0, K₀ = 0"
     ],
     "correctAnswerIndex": 2,
     "explanation": "The LSB of a binary counter must toggle on every clock cycle. Setting J₀ = K₀ = 1 makes the JK flip-flop operate in toggle mode."
@@ -507,22 +507,22 @@
     "id": "dd043",
     "questionText": "What is an excitation table used for?",
     "options": [
-      "Finding outputs for given inputs",
       "Finding required inputs for desired state transitions",
-      "Timing analysis",
-      "Power consumption calculation"
+      "Power consumption calculation",
+      "Finding outputs for given inputs",
+      "Timing analysis"
     ],
-    "correctAnswerIndex": 1,
+    "correctAnswerIndex": 0,
     "explanation": "Excitation tables help determine what flip-flop inputs are needed to achieve desired state transitions, which is essential for sequential circuit design."
   },
   {
     "id": "dd044",
     "questionText": "In computer organization, what is the primary function of the ALU?",
     "options": [
-      "Store data",
       "Control instruction execution",
+      "Interface with memory",
       "Perform arithmetic and logic operations",
-      "Interface with memory"
+      "Store data"
     ],
     "correctAnswerIndex": 2,
     "explanation": "The Arithmetic Logic Unit (ALU) performs all arithmetic operations (addition, subtraction) and logical operations (AND, OR, NOT) on data in the processor."
@@ -531,10 +531,10 @@
     "id": "dd045",
     "questionText": "What is the purpose of the Program Counter (PC)?",
     "options": [
-      "Count executed instructions",
+      "Store arithmetic results",
       "Store the address of next instruction",
       "Count program runtime",
-      "Store arithmetic results"
+      "Count executed instructions"
     ],
     "correctAnswerIndex": 1,
     "explanation": "The Program Counter (PC) holds the memory address of the next instruction to be fetched and executed, maintaining the sequence of program execution."
@@ -543,12 +543,12 @@
     "id": "dd046",
     "questionText": "Which register stores the instruction currently being executed?",
     "options": [
-      "Program Counter (PC)",
       "Accumulator",
       "Instruction Register (IR)",
-      "Flag Register"
+      "Flag Register",
+      "Program Counter (PC)"
     ],
-    "correctAnswerIndex": 2,
+    "correctAnswerIndex": 1,
     "explanation": "The Instruction Register (IR) holds the instruction that has been fetched from memory and is currently being decoded and executed by the control unit."
   },
   {
@@ -557,22 +557,22 @@
     "options": [
       "It remains unchanged",
       "It is reset to zero",
-      "It is incremented to point to next instruction",
-      "It stores the current instruction"
+      "It stores the current instruction",
+      "It is incremented to point to next instruction"
     ],
-    "correctAnswerIndex": 2,
+    "correctAnswerIndex": 3,
     "explanation": "After fetching an instruction, the PC is typically incremented by the instruction length to point to the next sequential instruction, unless modified by branch/jump instructions."
   },
   {
     "id": "dd048",
     "questionText": "Which component decodes the fetched instruction?",
     "options": [
-      "ALU",
       "Control Unit",
       "Accumulator",
+      "ALU",
       "Memory"
     ],
-    "correctAnswerIndex": 1,
+    "correctAnswerIndex": 0,
     "explanation": "The Control Unit decodes instructions stored in the IR and generates appropriate control signals to coordinate the execution of operations across different CPU components."
   },
   {
@@ -591,24 +591,24 @@
     "id": "dd050",
     "questionText": "In a 4-bit register, how many flip-flops are required?",
     "options": [
-      "2",
-      "4",
+      "16",
       "8",
-      "16"
+      "2",
+      "4"
     ],
-    "correctAnswerIndex": 1,
+    "correctAnswerIndex": 3,
     "explanation": "A 4-bit register needs 4 flip-flops, one for each bit position, to store a 4-bit binary value. Each flip-flop stores one bit of information."
   },
   {
     "id": "dd051",
     "questionText": "What type of register allows simultaneous input and output of all bits?",
     "options": [
-      "Serial-in, Serial-out",
       "Serial-in, Parallel-out",
       "Parallel-in, Parallel-out",
+      "Serial-in, Serial-out",
       "Parallel-in, Serial-out"
     ],
-    "correctAnswerIndex": 2,
+    "correctAnswerIndex": 1,
     "explanation": "Parallel-in, Parallel-out (PIPO) registers allow all bits to be loaded simultaneously and all bits to be read simultaneously, providing fastest data transfer."
   },
   {
@@ -616,11 +616,11 @@
     "questionText": "What is the main difference between SRAM and DRAM?",
     "options": [
       "Speed only",
+      "Size only",
       "Cost only",
-      "Storage mechanism and refresh requirements",
-      "Size only"
+      "Storage mechanism and refresh requirements"
     ],
-    "correctAnswerIndex": 2,
+    "correctAnswerIndex": 3,
     "explanation": "SRAM uses flip-flops (static storage, no refresh needed), while DRAM uses capacitors (dynamic storage, requires periodic refresh). This affects speed, power, cost, and density."
   },
   {
@@ -640,9 +640,9 @@
     "questionText": "In a memory chip organized as 1M × 8 bits, how many address lines are needed?",
     "options": [
       "20",
+      "24",
       "8",
-      "10",
-      "24"
+      "10"
     ],
     "correctAnswerIndex": 0,
     "explanation": "To address 1M (2²⁰) locations, 20 address lines are needed. The 8-bit width refers to data bus width, not address requirements."
@@ -651,10 +651,10 @@
     "id": "dd055",
     "questionText": "If a 16Mbit DRAM is organized as 4M words, what is the word size?",
     "options": [
-      "2 bits",
+      "16 bits",
       "4 bits",
       "8 bits",
-      "16 bits"
+      "2 bits"
     ],
     "correctAnswerIndex": 1,
     "explanation": "Total bits ÷ Number of words = Word size. 16Mbit ÷ 4M words = 4 bits per word."
@@ -663,12 +663,12 @@
     "id": "dd056",
     "questionText": "To build a 1M × 8bit memory module using 256K × 1bit chips, how many chips are needed?",
     "options": [
-      "4",
-      "8",
+      "64",
       "32",
-      "64"
+      "4",
+      "8"
     ],
-    "correctAnswerIndex": 2,
+    "correctAnswerIndex": 1,
     "explanation": "Need 4 chips for address space (1M ÷ 256K = 4) and 8 chips for data width (8bit ÷ 1bit = 8). Total: 4 × 8 = 32 chips."
   },
   {
@@ -676,23 +676,23 @@
     "questionText": "What causes propagation delay in logic gates?",
     "options": [
       "Power supply variations",
+      "Wire resistance",
       "Temperature changes",
-      "Switching time of transistors",
-      "Wire resistance"
+      "Switching time of transistors"
     ],
-    "correctAnswerIndex": 2,
+    "correctAnswerIndex": 3,
     "explanation": "Propagation delay is primarily caused by the finite time required for transistors and other switching elements within the gate to respond to input changes."
   },
   {
     "id": "dd058",
     "questionText": "What is a glitch in digital circuits?",
     "options": [
-      "Permanent circuit failure",
-      "Power supply noise",
+      "Input signal error",
       "Unwanted short pulse during transitions",
-      "Input signal error"
+      "Power supply noise",
+      "Permanent circuit failure"
     ],
-    "correctAnswerIndex": 2,
+    "correctAnswerIndex": 1,
     "explanation": "A glitch is an unwanted, brief pulse that appears at the output due to different propagation delays in circuit paths, even when the steady-state output should not change."
   },
   {
@@ -700,11 +700,11 @@
     "questionText": "What is a static-1 hazard?",
     "options": [
       "Output stuck at 1",
-      "Input always 1",
       "Momentary 0 glitch when output should stay 1",
-      "Permanent 1 output"
+      "Permanent 1 output",
+      "Input always 1"
     ],
-    "correctAnswerIndex": 2,
+    "correctAnswerIndex": 1,
     "explanation": "A static-1 hazard occurs when the circuit output should remain steady at 1, but temporarily produces a 0 glitch due to different propagation delays in signal paths."
   },
   {
@@ -713,8 +713,8 @@
     "options": [
       "Use faster gates",
       "Add redundant prime implicants",
-      "Increase power supply voltage",
-      "Use different logic family"
+      "Use different logic family",
+      "Increase power supply voltage"
     ],
     "correctAnswerIndex": 1,
     "explanation": "Static hazards can be eliminated by adding redundant prime implicants that cover the transition between adjacent 1s in the K-map, ensuring continuous output assertion during input transitions."
@@ -723,34 +723,34 @@
     "id": "dd061",
     "questionText": "When do dynamic hazards occur?",
     "options": [
-      "In two-level circuits only",
       "With single input changes",
-      "In multi-level circuits with multiple paths",
-      "During power-up"
+      "In two-level circuits only",
+      "During power-up",
+      "In multi-level circuits with multiple paths"
     ],
-    "correctAnswerIndex": 2,
+    "correctAnswerIndex": 3,
     "explanation": "Dynamic hazards occur in multi-level circuits where there are three or more paths with different delays from an input to the output, causing multiple transitions instead of a single transition."
   },
   {
     "id": "dd062",
     "questionText": "Which circuits are naturally free from dynamic hazards?",
     "options": [
-      "Multi-level circuits",
       "Sequential circuits",
-      "Two-level AND-OR circuits",
-      "Asynchronous circuits"
+      "Asynchronous circuits",
+      "Multi-level circuits",
+      "Two-level AND-OR circuits"
     ],
-    "correctAnswerIndex": 2,
+    "correctAnswerIndex": 3,
     "explanation": "Properly designed two-level AND-OR or OR-AND circuits do not have dynamic hazards because they limit the number of different delay paths from input to output."
   },
   {
     "id": "dd063",
     "questionText": "What is the primary advantage of synchronous circuits over asynchronous circuits regarding hazards?",
     "options": [
+      "Higher speed",
       "Lower power consumption",
-      "Smaller area",
       "Clock signal masks timing hazards",
-      "Higher speed"
+      "Smaller area"
     ],
     "correctAnswerIndex": 2,
     "explanation": "In synchronous circuits, the clock period can be designed to be longer than the maximum propagation delay, ensuring that glitches settle before the next clock edge samples the output."
@@ -771,22 +771,22 @@
     "id": "dd065",
     "questionText": "What is a key property of Gray code?",
     "options": [
-      "Fastest conversion to binary",
-      "Minimum number of bits",
+      "Direct arithmetic operations possible",
       "Only one bit changes between adjacent codes",
-      "Direct arithmetic operations possible"
+      "Fastest conversion to binary",
+      "Minimum number of bits"
     ],
-    "correctAnswerIndex": 2,
+    "correctAnswerIndex": 1,
     "explanation": "Gray code's key property is that only one bit changes between any two adjacent code words, which helps prevent spurious outputs in electromechanical systems and aids error correction."
   },
   {
     "id": "dd066",
     "questionText": "What is fan-out in digital logic?",
     "options": [
-      "Number of inputs a gate can have",
+      "Power consumption of gate",
       "Number of gates an output can drive",
       "Speed of gate switching",
-      "Power consumption of gate"
+      "Number of inputs a gate can have"
     ],
     "correctAnswerIndex": 1,
     "explanation": "Fan-out refers to the maximum number of gate inputs that a single gate output can reliably drive while maintaining proper logic levels and timing specifications."
@@ -795,60 +795,60 @@
     "id": "dd067",
     "questionText": "What does DC noise margin specify?",
     "options": [
-      "Maximum frequency of operation",
-      "Power supply tolerance",
+      "Immunity to noise interference",
       "Voltage difference between logic levels",
-      "Immunity to noise interference"
+      "Power supply tolerance",
+      "Maximum frequency of operation"
     ],
-    "correctAnswerIndex": 3,
+    "correctAnswerIndex": 0,
     "explanation": "DC noise margin specifies how much noise voltage can be tolerated at the input before the circuit fails to distinguish between logic 0 and logic 1, providing immunity to interference."
   },
   {
     "id": "dd068",
     "questionText": "What is the main advantage of CMOS technology over TTL?",
     "options": [
-      "Higher speed",
-      "Lower power consumption",
       "Better noise immunity",
-      "Lower cost"
+      "Higher speed",
+      "Lower cost",
+      "Lower power consumption"
     ],
-    "correctAnswerIndex": 1,
+    "correctAnswerIndex": 3,
     "explanation": "CMOS (Complementary MOS) technology has significantly lower static power consumption because current flows only during switching transitions, not in steady state."
   },
   {
     "id": "dd069",
     "questionText": "In FPGA design, what are LUTs primarily used for?",
     "options": [
-      "Memory storage",
       "Clock generation",
-      "Implementing combinational logic",
-      "Input/output interfacing"
+      "Input/output interfacing",
+      "Memory storage",
+      "Implementing combinational logic"
     ],
-    "correctAnswerIndex": 2,
+    "correctAnswerIndex": 3,
     "explanation": "Look-Up Tables (LUTs) in FPGAs store precomputed output values for all possible input combinations, effectively implementing any combinational logic function within their input limit."
   },
   {
     "id": "dd070",
     "questionText": "What is the advantage of using LUTs over traditional gate implementation?",
     "options": [
-      "Lower cost",
-      "Faster switching",
+      "Lower power consumption",
       "Programmability and uniform delay",
-      "Lower power consumption"
+      "Faster switching",
+      "Lower cost"
     ],
-    "correctAnswerIndex": 2,
+    "correctAnswerIndex": 1,
     "explanation": "LUTs offer programmability (can implement any function by changing stored values) and uniform propagation delay regardless of the function complexity, unlike gate networks with variable delays."
   },
   {
     "id": "dd071",
     "questionText": "In serial data transmission, what is the main advantage over parallel transmission?",
     "options": [
-      "Higher speed",
-      "Lower cost due to fewer wires",
       "Better reliability",
-      "Easier synchronization"
+      "Higher speed",
+      "Easier synchronization",
+      "Lower cost due to fewer wires"
     ],
-    "correctAnswerIndex": 1,
+    "correctAnswerIndex": 3,
     "explanation": "Serial transmission requires only one data line (plus control lines) compared to parallel transmission which needs one line per bit, significantly reducing cable cost and complexity for long distances."
   },
   {
@@ -856,43 +856,43 @@
     "questionText": "What is the relationship between frequency (f) and period (T) in periodic waveforms?",
     "options": [
       "f = T",
-      "f = 1/T",
+      "f = 2T",
       "f = T²",
-      "f = 2T"
+      "f = 1/T"
     ],
-    "correctAnswerIndex": 1,
+    "correctAnswerIndex": 3,
     "explanation": "Frequency and period are inversely related: f = 1/T. If period T is the time for one complete cycle, then frequency f is the number of cycles per unit time."
   },
   {
     "id": "dd073",
     "questionText": "What determines the maximum operating frequency of a digital circuit?",
     "options": [
+      "Input signal strength",
       "Power supply voltage",
-      "Longest propagation delay path",
       "Number of gates",
-      "Input signal strength"
+      "Longest propagation delay path"
     ],
-    "correctAnswerIndex": 1,
+    "correctAnswerIndex": 3,
     "explanation": "The maximum frequency is limited by the longest propagation delay path in the circuit. The clock period must be longer than this critical path delay to ensure proper operation."
   },
   {
     "id": "dd074",
     "questionText": "In K-map simplification, what does 'wrapping around' allow?",
     "options": [
+      "Creating larger than 2ⁿ groups",
       "Using diagonal groupings",
       "Grouping cells at opposite edges",
-      "Overlapping all groups",
-      "Creating larger than 2ⁿ groups"
+      "Overlapping all groups"
     ],
-    "correctAnswerIndex": 1,
+    "correctAnswerIndex": 2,
     "explanation": "K-map wrapping allows grouping of cells at opposite edges (leftmost with rightmost, topmost with bottommost) because these positions are logically adjacent in the Gray code sequence."
   },
   {
     "id": "dd075",
     "questionText": "What is the minimum number of terms needed to represent F = AB + AC + BC using K-map simplification?",
     "options": [
-      "1",
       "2",
+      "1",
       "3",
       "Cannot be simplified"
     ],
@@ -904,81 +904,81 @@
     "questionText": "In designing a prime number detector for single digits (0-9), which BCD codes are 'don't cares'?",
     "options": [
       "0000-1001",
+      "1000-1001",
       "1010-1111",
-      "0000-0001",
-      "1000-1001"
+      "0000-0001"
     ],
-    "correctAnswerIndex": 1,
+    "correctAnswerIndex": 2,
     "explanation": "In BCD, only codes 0000-1001 represent valid decimal digits 0-9. Codes 1010-1111 are invalid in BCD and can be treated as 'don't care' conditions for optimization."
   },
   {
     "id": "dd077",
     "questionText": "What is the output of a 3-input XOR gate when exactly two inputs are HIGH?",
     "options": [
+      "Depends on which inputs",
       "0",
       "1",
-      "Undefined",
-      "Depends on which inputs"
+      "Undefined"
     ],
-    "correctAnswerIndex": 0,
+    "correctAnswerIndex": 1,
     "explanation": "XOR gates output 1 for odd parity (odd number of 1s). With exactly two inputs HIGH (even number), the output is 0."
   },
   {
     "id": "dd078",
     "questionText": "Which addressing mode directly specifies the operand value in the instruction?",
     "options": [
-      "Direct addressing",
-      "Indirect addressing",
       "Immediate addressing",
+      "Indirect addressing",
+      "Direct addressing",
       "Indexed addressing"
     ],
-    "correctAnswerIndex": 2,
+    "correctAnswerIndex": 0,
     "explanation": "Immediate addressing mode includes the actual operand value directly in the instruction, such as 'LOAD A, 10' where 10 is the immediate value to be loaded."
   },
   {
     "id": "dd079",
     "questionText": "In the instruction 'STORE A, [20]', what does [20] represent?",
     "options": [
-      "The value 20",
-      "Register 20",
       "Memory address 20",
-      "Instruction address 20"
+      "Register 20",
+      "Instruction address 20",
+      "The value 20"
     ],
-    "correctAnswerIndex": 2,
+    "correctAnswerIndex": 0,
     "explanation": "The square brackets [20] indicate memory address 20, meaning store the contents of register A into memory location 20. This is direct addressing mode."
   },
   {
     "id": "dd080",
     "questionText": "What is the primary purpose of the accumulator register?",
     "options": [
-      "Store memory addresses",
-      "Count instructions",
+      "Control program flow",
       "Store ALU operation results",
-      "Control program flow"
+      "Count instructions",
+      "Store memory addresses"
     ],
-    "correctAnswerIndex": 2,
+    "correctAnswerIndex": 1,
     "explanation": "The accumulator is directly connected to the ALU output and serves as the primary register for storing results of arithmetic and logical operations."
   },
   {
     "id": "dd081",
     "questionText": "What information do flag registers typically contain?",
     "options": [
-      "Memory addresses",
       "Instruction opcodes",
-      "Status of ALU operations",
-      "Input/output data"
+      "Memory addresses",
+      "Input/output data",
+      "Status of ALU operations"
     ],
-    "correctAnswerIndex": 2,
+    "correctAnswerIndex": 3,
     "explanation": "Flag registers contain status bits that indicate conditions resulting from ALU operations, such as zero result, negative result, carry/overflow, and parity."
   },
   {
     "id": "dd082",
     "questionText": "Which type of memory is typically used for main memory in computers?",
     "options": [
-      "SRAM",
-      "DRAM",
       "ROM",
-      "Flash"
+      "DRAM",
+      "Flash",
+      "SRAM"
     ],
     "correctAnswerIndex": 1,
     "explanation": "DRAM is used for main memory because it offers high density (more storage per chip) and lower cost per bit compared to SRAM, despite being slower and requiring refresh."
@@ -987,108 +987,108 @@
     "id": "dd083",
     "questionText": "Which type of memory is typically used for cache memory?",
     "options": [
-      "SRAM",
       "DRAM",
       "ROM",
+      "SRAM",
       "Flash"
     ],
-    "correctAnswerIndex": 0,
+    "correctAnswerIndex": 2,
     "explanation": "SRAM is used for cache memory because it provides much faster access times than DRAM, no refresh requirements, and can keep up with processor speeds."
   },
   {
     "id": "dd084",
     "questionText": "What happens during a memory refresh cycle in DRAM?",
     "options": [
-      "New data is written",
-      "Data is read by CPU",
+      "Address lines are reset",
       "Capacitor charges are restored",
-      "Address lines are reset"
+      "New data is written",
+      "Data is read by CPU"
     ],
-    "correctAnswerIndex": 2,
+    "correctAnswerIndex": 1,
     "explanation": "During refresh cycles, the stored charge in DRAM capacitors is restored to compensate for leakage, maintaining data integrity without CPU intervention."
   },
   {
     "id": "dd085",
     "questionText": "In a memory chip with 1024 words, how many address lines are required?",
     "options": [
-      "8",
       "10",
+      "8",
       "12",
       "16"
     ],
-    "correctAnswerIndex": 1,
+    "correctAnswerIndex": 0,
     "explanation": "To address 1024 = 2¹⁰ unique locations, exactly 10 address lines are required. Each address line represents one bit of the binary address."
   },
   {
     "id": "dd086",
     "questionText": "What is the Von Neumann architecture's key characteristic?",
     "options": [
+      "Parallel processing",
       "Separate instruction and data memory",
       "Shared memory for instructions and data",
-      "Multiple processors",
-      "Parallel processing"
+      "Multiple processors"
     ],
-    "correctAnswerIndex": 1,
+    "correctAnswerIndex": 2,
     "explanation": "Von Neumann architecture uses a single shared memory space for both program instructions and data, accessed through the same bus system and address space."
   },
   {
     "id": "dd087",
     "questionText": "What is the basic building block of SRAM memory cells?",
     "options": [
-      "Capacitors",
       "Flip-flops",
       "Diodes",
-      "Resistors"
+      "Resistors",
+      "Capacitors"
     ],
-    "correctAnswerIndex": 1,
+    "correctAnswerIndex": 0,
     "explanation": "SRAM memory cells are built using flip-flops (typically cross-coupled inverters), which provide stable static storage that retains data as long as power is supplied."
   },
   {
     "id": "dd088",
     "questionText": "What limits the maximum clock frequency in synchronous sequential circuits?",
     "options": [
-      "Power consumption",
-      "Setup and hold time constraints",
       "Number of flip-flops",
-      "Input signal strength"
+      "Input signal strength",
+      "Setup and hold time constraints",
+      "Power consumption"
     ],
-    "correctAnswerIndex": 1,
+    "correctAnswerIndex": 2,
     "explanation": "Setup time (data must be stable before clock edge) and hold time (data must remain stable after clock edge) constraints determine the minimum clock period and thus maximum frequency."
   },
   {
     "id": "dd089",
     "questionText": "In the instruction execution sequence, what happens immediately after instruction fetch?",
     "options": [
-      "Execute instruction",
-      "Update program counter",
+      "Store result",
       "Decode instruction",
-      "Store result"
+      "Execute instruction",
+      "Update program counter"
     ],
-    "correctAnswerIndex": 1,
+    "correctAnswerIndex": 3,
     "explanation": "After fetching an instruction, the program counter is immediately updated to point to the next instruction, then the current instruction is decoded and executed."
   },
   {
     "id": "dd090",
     "questionText": "What is the purpose of instruction decoding?",
     "options": [
-      "Convert binary to decimal",
       "Determine instruction type and required operations",
       "Check for errors",
+      "Convert binary to decimal",
       "Optimize instruction order"
     ],
-    "correctAnswerIndex": 1,
+    "correctAnswerIndex": 0,
     "explanation": "Instruction decoding analyzes the fetched instruction to determine what type of operation to perform, which registers or memory locations to access, and what control signals to generate."
   },
   {
     "id": "dd091",
     "questionText": "Which logic family typically offers the best speed-power product?",
     "options": [
-      "TTL",
       "ECL",
-      "CMOS",
-      "NMOS"
+      "NMOS",
+      "TTL",
+      "CMOS"
     ],
-    "correctAnswerIndex": 2,
+    "correctAnswerIndex": 3,
     "explanation": "CMOS generally offers the best speed-power product, providing good speed while maintaining very low static power consumption, making it ideal for most digital applications."
   },
   {
@@ -1096,21 +1096,21 @@
     "questionText": "What is the purpose of using multiple Karnaugh maps in multi-output circuit design?",
     "options": [
       "Increase circuit speed",
+      "Simplify timing analysis",
       "Reduce power consumption",
-      "Share common terms between outputs",
-      "Simplify timing analysis"
+      "Share common terms between outputs"
     ],
-    "correctAnswerIndex": 2,
+    "correctAnswerIndex": 3,
     "explanation": "Multiple K-maps allow identification of shared terms between different outputs, enabling optimization where common product terms can be used for multiple functions, reducing overall gate count."
   },
   {
     "id": "dd093",
     "questionText": "In FPGA technology, what does LUT stand for?",
     "options": [
-      "Logic Unit Transfer",
+      "Logic Universal Transform",
       "Look-Up Table",
       "Linear Uniform Timing",
-      "Logic Universal Transform"
+      "Logic Unit Transfer"
     ],
     "correctAnswerIndex": 1,
     "explanation": "LUT stands for Look-Up Table, which is a small memory that stores the truth table of a logic function and is the fundamental building block for implementing logic in FPGAs."
@@ -1119,24 +1119,24 @@
     "id": "dd094",
     "questionText": "What is the main advantage of using hierarchical decoder design?",
     "options": [
-      "Faster operation",
+      "Better noise immunity",
       "Lower power consumption",
-      "Reduced complexity of large decoders",
-      "Better noise immunity"
+      "Faster operation",
+      "Reduced complexity of large decoders"
     ],
-    "correctAnswerIndex": 2,
+    "correctAnswerIndex": 3,
     "explanation": "Hierarchical design breaks large decoders into smaller, manageable blocks, avoiding the need for high fan-in gates and making the design more practical and easier to implement."
   },
   {
     "id": "dd095",
     "questionText": "In a T flip-flop with enable, what determines whether toggling occurs?",
     "options": [
+      "Both T input and enable signal",
       "Clock signal only",
       "T input only",
-      "Enable signal only",
-      "Both T input and enable signal"
+      "Enable signal only"
     ],
-    "correctAnswerIndex": 3,
+    "correctAnswerIndex": 0,
     "explanation": "In a T flip-flop with enable, toggling occurs only when both the T input is HIGH and the enable signal is active, providing conditional toggle operation."
   },
   {
@@ -1144,21 +1144,21 @@
     "questionText": "What is the primary difference between Moore and Mealy state machines?",
     "options": [
       "Number of states",
-      "Clock requirements",
       "Output dependency",
-      "Power consumption"
+      "Power consumption",
+      "Clock requirements"
     ],
-    "correctAnswerIndex": 2,
+    "correctAnswerIndex": 1,
     "explanation": "Moore machines have outputs that depend only on the current state, while Mealy machines have outputs that depend on both current state and current inputs."
   },
   {
     "id": "dd097",
     "questionText": "Why are synchronous circuits preferred over asynchronous circuits in most digital systems?",
     "options": [
-      "Lower cost",
       "Higher speed",
+      "Lower power consumption",
       "Easier timing analysis and design",
-      "Lower power consumption"
+      "Lower cost"
     ],
     "correctAnswerIndex": 2,
     "explanation": "Synchronous circuits are easier to design and analyze because all state changes occur at well-defined clock edges, eliminating race conditions and timing hazards that plague asynchronous designs."
@@ -1167,9 +1167,9 @@
     "id": "dd098",
     "questionText": "In a 4-bit ripple counter using T flip-flops, which flip-flop changes state most frequently?",
     "options": [
+      "Third bit (Q₁)",
       "MSB (Q₃)",
       "Second bit (Q₂)",
-      "Third bit (Q₁)",
       "LSB (Q₀)"
     ],
     "correctAnswerIndex": 3,
@@ -1179,21 +1179,21 @@
     "id": "dd099",
     "questionText": "What is the maximum count value for a 3-bit binary counter?",
     "options": [
-      "6",
       "7",
+      "9",
       "8",
-      "9"
+      "6"
     ],
-    "correctAnswerIndex": 1,
+    "correctAnswerIndex": 0,
     "explanation": "A 3-bit binary counter can represent values from 000₂ to 111₂, which is 0 to 7 in decimal. The maximum count value is 7 (2³ - 1)."
   },
   {
     "id": "dd100",
     "questionText": "Which statement best describes the relationship between computer architecture, organization, and design?",
     "options": [
-      "They are all the same concept",
-      "Architecture defines what programmer sees, organization defines how it's implemented, design defines physical realization",
       "Organization is the highest level, followed by architecture, then design",
+      "Architecture defines what programmer sees, organization defines how it's implemented, design defines physical realization",
+      "They are all the same concept",
       "Design comes first, then organization, finally architecture"
     ],
     "correctAnswerIndex": 1,
