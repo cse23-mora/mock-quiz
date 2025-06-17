@@ -1,7 +1,6 @@
 <script lang='ts'>
 	import { onMount } from 'svelte';
-	import { goto } from '$app/navigation';
-	import { latexRender } from '$lib/actions/katex'; // Import KaTeX action
+	import { processLatexInText } from "$lib/latex";
 
 	export let data; // From +page.ts (contains subject, subjectDisplayableName)
 	const { subject, subjectDisplayableName } = data;
@@ -170,7 +169,7 @@
 
 				<div class="space-y-6">
 					{#each quizResults.reviewData as item, index (item.id)}
-						<div class="border-2 border-slate-200 dark:border-slate-600 rounded-2xl p-6 bg-white dark:bg-slate-800 shadow-sm hover:shadow-md transition-shadow duration-200" use:latexRender>
+						<div class="border-2 border-slate-200 dark:border-slate-600 rounded-2xl p-6 bg-white dark:bg-slate-800 shadow-sm hover:shadow-md transition-shadow duration-200">
 							
 							<!-- Question Header -->
 							<div class="flex items-start gap-4 mb-6">
@@ -184,7 +183,7 @@
 										Question {index + 1}
 									</p>
 									<div class="prose prose-slate dark:prose-invert max-w-none text-slate-700 dark:text-slate-300">
-										{@html item.questionText}
+										{@html processLatexInText(item.questionText)}
 									</div>
 								</div>
 								<div class="flex-shrink-0">
@@ -215,7 +214,7 @@
 								<div class="p-4 rounded-xl border-2 bg-slate-100 dark:bg-slate-700 border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-400">
 									{#if item.userAnswerIndex !== null && item.options[item.userAnswerIndex]}
 										<div class="prose prose-sm max-w-none">
-											{@html item.options[item.userAnswerIndex]}
+											{@html processLatexInText(item.options[item.userAnswerIndex])}
 										</div>
 									{:else if item.userAnswerIndex === null}
 										<span class="italic">Not answered</span>
@@ -237,7 +236,7 @@
 									<div class="p-4 rounded-xl bg-green-50 dark:bg-green-900/20 border-2 border-green-200 dark:border-green-800">
 										{#if item.options[item.correctAnswerIndex]}
 											<div class="prose prose-sm max-w-none text-green-800 dark:text-green-200">
-												{@html item.options[item.correctAnswerIndex]}
+												{@html processLatexInText(item.options[item.correctAnswerIndex])}
 											</div>
 										{:else}
 											<span class="italic text-green-700 dark:text-green-300">Correct answer data missing</span>
@@ -257,7 +256,7 @@
 								<div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-600">
 									{#if item.explanation}
 										<div class="prose prose-sm prose-slate dark:prose-invert max-w-none text-slate-600 dark:text-slate-400">
-											{@html item.explanation}
+											{@html processLatexInText(item.explanation)}
 										</div>
 									{:else}
 										<span class="italic text-slate-600 dark:text-slate-400">No explanation available.</span>
